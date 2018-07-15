@@ -1,0 +1,1 @@
+module.exports = (len) => Math.random().toString(36).substr(-(len+2), len)

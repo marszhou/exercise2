@@ -1,0 +1,502 @@
+[2018-07-08T11:44:27.983] [DEBUG] default - Some debug messages
+[2018-07-08T11:53:19.184] [INFO] default - http server listening: :::8080
+[2018-07-11T13:49:44.076] [INFO] default - http server listening: :::8080
+[2018-07-11T13:50:01.834] [INFO] default - http server listening: :::8080
+[2018-07-11T13:50:12.898] [INFO] default - http server listening: :::8080
+[2018-07-11T14:34:37.120] [INFO] default - http server listening: :::8080
+[2018-07-11T14:34:42.760] [INFO] default - http server listening: :::8080
+[2018-07-11T14:39:43.348] [INFO] default - http server listening: :::8080
+[2018-07-11T14:39:44.665] [INFO] default - http server listening: :::8080
+[2018-07-11T14:39:52.199] [INFO] default - http server listening: :::8080
+[2018-07-11T14:39:53.493] [INFO] default - http server listening: :::8080
+[2018-07-11T14:41:07.564] [INFO] default - http server listening: :::8080
+[2018-07-11T14:41:08.121] [INFO] default - http server listening: :::8080
+[2018-07-11T14:41:25.992] [INFO] default - http server listening: :::8080
+[2018-07-11T14:41:26.515] [INFO] default - http server listening: :::8080
+[2018-07-11T14:51:12.283] [INFO] default - http server listening: :::8080
+[2018-07-11T14:51:13.449] [INFO] default - http server listening: :::8080
+[2018-07-11T14:53:41.342] [INFO] default - http server listening: :::8080
+[2018-07-11T14:53:43.279] [INFO] default - http server listening: :::8080
+[2018-07-11T14:54:13.759] [INFO] default - http server listening: :::8080
+[2018-07-11T14:54:15.051] [INFO] default - http server listening: :::8080
+[2018-07-11T14:56:22.243] [INFO] default - http server listening: :::8080
+[2018-07-11T14:56:23.908] [INFO] default - http server listening: :::8080
+[2018-07-11T14:56:42.422] [INFO] default - http server listening: :::8080
+[2018-07-11T14:56:44.320] [INFO] default - http server listening: :::8080
+[2018-07-11T14:56:59.336] [INFO] default - http server listening: :::8080
+[2018-07-11T14:57:01.050] [INFO] default - http server listening: :::8080
+[2018-07-11T14:57:35.615] [INFO] default - http server listening: :::8080
+[2018-07-11T14:57:37.329] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:10.355] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:12.053] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:41.640] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:43.667] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:58.365] [INFO] default - http server listening: :::8080
+[2018-07-11T14:58:59.656] [INFO] default - http server listening: :::8080
+[2018-07-11T14:59:13.933] [INFO] default - http server listening: :::8080
+[2018-07-11T14:59:15.664] [INFO] default - http server listening: :::8080
+[2018-07-11T15:00:30.871] [INFO] default - http server listening: :::8080
+[2018-07-11T15:00:32.582] [INFO] default - http server listening: :::8080
+[2018-07-11T15:02:02.125] [INFO] default - http server listening: :::8080
+[2018-07-11T15:02:03.351] [INFO] default - http server listening: :::8080
+[2018-07-11T15:10:08.507] [INFO] default - http server listening: :::8080
+[2018-07-11T15:10:09.728] [INFO] default - http server listening: :::8080
+[2018-07-11T15:10:34.454] [INFO] default - http server listening: :::8080
+[2018-07-11T15:10:36.232] [INFO] default - http server listening: :::8080
+[2018-07-11T15:11:03.322] [INFO] default - http server listening: :::8080
+[2018-07-11T15:11:05.050] [INFO] default - http server listening: :::8080
+[2018-07-11T15:12:45.127] [INFO] default - http server listening: :::8080
+[2018-07-11T15:12:46.426] [INFO] default - http server listening: :::8080
+[2018-07-11T15:15:53.750] [INFO] default - http server listening: :::8080
+[2018-07-11T15:15:54.861] [INFO] default - http server listening: :::8080
+[2018-07-11T15:22:11.492] [INFO] default - GET: /
+[2018-07-11T15:22:12.124] [INFO] default - GET: /favicon.ico
+[2018-07-11T15:23:17.035] [INFO] default - GET: /
+[2018-07-11T15:24:35.520] [INFO] default - http server listening: :::8080
+[2018-07-11T15:24:36.580] [INFO] default - http server listening: :::8080
+[2018-07-11T15:25:08.762] [INFO] default - GET: /item/1
+[2018-07-11T15:30:30.063] [INFO] default - http server listening: :::8080
+[2018-07-11T15:30:31.038] [INFO] default - http server listening: :::8080
+[2018-07-11T15:30:32.582] [INFO] default - http server listening: :::8080
+[2018-07-11T15:30:40.516] [INFO] default - GET: /item/1?a=1
+[2018-07-11T15:31:10.170] [INFO] default - GET: /item/1?a=****************
+[2018-07-11T15:34:01.385] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:02.488] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:15.332] [INFO] default - GET: /item/1?category=1
+[2018-07-11T15:34:46.309] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:48.025] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:52.619] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:53.737] [INFO] default - http server listening: :::8080
+[2018-07-11T15:34:56.480] [INFO] default - GET: /item/1?category=1
+[2018-07-11T15:36:07.221] [INFO] default - http server listening: :::8080
+[2018-07-11T15:36:08.346] [INFO] default - http server listening: :::8080
+[2018-07-11T15:36:48.848] [INFO] default - http server listening: :::8080
+[2018-07-11T15:36:51.037] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:01.300] [INFO] default - GET: /item/1?category=1
+[2018-07-11T15:37:32.523] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:33.989] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:35.032] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:45.850] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:46.986] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:47.996] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:49.276] [INFO] default - http server listening: :::8080
+[2018-07-11T15:37:51.345] [INFO] default - GET: /item/1?category=1
+[2018-07-11T15:38:12.200] [INFO] default - GET: /
+[2018-07-11T15:38:13.598] [INFO] default - GET: /item/1?category=1
+[2018-07-11T15:45:00.443] [INFO] default - http server listening: :::8080
+[2018-07-11T15:45:00.797] [INFO] default - http server listening: :::8080
+[2018-07-11T15:45:50.643] [INFO] default - http server listening: :::8080
+[2018-07-11T15:45:51.763] [INFO] default - http server listening: :::8080
+[2018-07-11T15:46:05.453] [INFO] default - GET: /item/1
+[2018-07-11T15:46:10.581] [INFO] default - GET: /items/1
+[2018-07-11T15:46:41.288] [INFO] default - GET: /items?category=1&brand=1
+[2018-07-11T15:46:45.914] [INFO] default - GET: /items?category=1&brand=2
+[2018-07-11T15:58:17.292] [INFO] default - POST: /items/register
+[2018-07-11T15:58:25.428] [INFO] default - POST: /account/register
+[2018-07-11T15:58:46.102] [INFO] default - http server listening: :::8080
+[2018-07-11T15:58:47.680] [INFO] default - http server listening: :::8080
+[2018-07-11T15:58:49.570] [INFO] default - POST: /account/register
+[2018-07-11T15:58:55.158] [INFO] default - POST: /account/register
+[2018-07-11T15:58:56.274] [INFO] default - POST: /account/register
+[2018-07-11T15:59:19.866] [INFO] default - http server listening: :::8080
+[2018-07-11T15:59:28.483] [INFO] default - POST: /account/register
+[2018-07-11T16:00:31.717] [INFO] default - POST: /account/register
+[2018-07-11T16:12:08.484] [INFO] default - http server listening: :::8080
+[2018-07-11T16:12:09.765] [INFO] default - http server listening: :::8080
+[2018-07-11T16:12:19.410] [INFO] default - POST: /account/register
+[2018-07-11T16:12:43.931] [INFO] default - http server listening: :::8080
+[2018-07-11T16:12:45.068] [INFO] default - http server listening: :::8080
+[2018-07-11T16:12:47.014] [INFO] default - POST: /account/register
+[2018-07-11T16:13:17.842] [INFO] default - http server listening: :::8080
+[2018-07-11T16:13:19.386] [INFO] default - http server listening: :::8080
+[2018-07-11T16:13:22.612] [INFO] default - POST: /account/register
+[2018-07-11T16:14:02.527] [INFO] default - POST: /account/register
+[2018-07-11T16:14:03.661] [INFO] default - POST: /account/register
+[2018-07-11T16:14:56.387] [INFO] default - http server listening: :::8080
+[2018-07-11T16:14:57.583] [INFO] default - http server listening: :::8080
+[2018-07-11T16:14:59.184] [INFO] default - http server listening: :::8080
+[2018-07-11T16:15:00.080] [INFO] default - POST: /account/register
+[2018-07-11T16:15:45.578] [INFO] default - http server listening: :::8080
+[2018-07-11T16:15:47.134] [INFO] default - http server listening: :::8080
+[2018-07-11T16:15:56.791] [INFO] default - POST: /account/register
+[2018-07-11T16:18:04.470] [INFO] default - http server listening: :::8080
+[2018-07-11T16:18:06.025] [INFO] default - http server listening: :::8080
+[2018-07-11T16:18:18.138] [INFO] default - POST: /account/register
+[2018-07-11T16:19:31.561] [INFO] default - http server listening: :::8080
+[2018-07-11T16:19:32.851] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:02.229] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:03.528] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:13.447] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:14.609] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:28.360] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:29.463] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:36.206] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:37.305] [INFO] default - http server listening: :::8080
+[2018-07-11T16:20:44.207] [INFO] default - POST: /account/register
+[2018-07-11T16:20:48.673] [INFO] default - POST: /account/register
+[2018-07-11T16:21:53.027] [INFO] default - http server listening: :::8080
+[2018-07-11T16:21:54.165] [INFO] default - http server listening: :::8080
+[2018-07-11T16:22:04.191] [INFO] default - POST: /account/register
+[2018-07-11T16:23:51.928] [INFO] default - http server listening: :::8080
+[2018-07-11T16:23:53.372] [INFO] default - http server listening: :::8080
+[2018-07-11T16:23:57.862] [INFO] default - POST: /account/register
+[2018-07-11T16:32:57.355] [INFO] default - http server listening: :::8080
+[2018-07-11T16:32:58.517] [INFO] default - http server listening: :::8080
+[2018-07-11T16:33:06.466] [INFO] default - http server listening: :::8080
+[2018-07-11T16:33:07.612] [INFO] default - http server listening: :::8080
+[2018-07-11T16:33:28.557] [INFO] default - http server listening: :::8080
+[2018-07-11T16:33:29.767] [INFO] default - http server listening: :::8080
+[2018-07-11T16:34:17.596] [INFO] default - http server listening: :::8080
+[2018-07-11T16:34:19.523] [INFO] default - http server listening: :::8080
+[2018-07-11T16:35:20.508] [INFO] default - http server listening: :::8080
+[2018-07-11T16:35:22.075] [INFO] default - http server listening: :::8080
+[2018-07-11T16:35:25.300] [INFO] default - POST: /account/register
+[2018-07-11T16:35:30.081] [INFO] default - POST: /account/register
+[2018-07-11T16:35:58.310] [INFO] default - http server listening: :::8080
+[2018-07-11T16:35:59.762] [INFO] default - http server listening: :::8080
+[2018-07-11T16:36:09.968] [INFO] default - POST: /account/register
+[2018-07-11T16:36:55.684] [INFO] default - POST: /account/register
+[2018-07-11T16:39:34.557] [INFO] default - http server listening: :::8080
+[2018-07-11T16:39:35.758] [INFO] default - http server listening: :::8080
+[2018-07-11T16:43:16.625] [INFO] default - http server listening: :::8080
+[2018-07-11T16:43:17.725] [INFO] default - http server listening: :::8080
+[2018-07-11T16:55:46.056] [INFO] default - http server listening: :::8080
+[2018-07-11T16:55:47.199] [INFO] default - http server listening: :::8080
+[2018-07-11T16:55:48.960] [INFO] default - http server listening: :::8080
+[2018-07-11T16:55:50.747] [INFO] default - http server listening: :::8080
+[2018-07-11T16:55:51.915] [INFO] default - http server listening: :::8080
+[2018-07-11T16:59:51.897] [INFO] default - http server listening: :::8080
+[2018-07-11T16:59:53.241] [INFO] default - http server listening: :::8080
+[2018-07-11T17:01:49.748] [INFO] default - http server listening: :::8080
+[2018-07-11T17:01:50.834] [INFO] default - http server listening: :::8080
+[2018-07-11T17:02:09.215] [INFO] default - http server listening: :::8080
+[2018-07-11T17:02:10.740] [INFO] default - http server listening: :::8080
+[2018-07-11T17:02:15.614] [INFO] default - http server listening: :::8080
+[2018-07-11T17:02:16.640] [INFO] default - http server listening: :::8080
+[2018-07-11T17:03:50.745] [INFO] default - http server listening: :::8080
+[2018-07-11T17:03:51.595] [INFO] default - http server listening: :::8080
+[2018-07-11T17:03:57.617] [INFO] default - http server listening: :::8080
+[2018-07-11T17:03:58.604] [INFO] default - http server listening: :::8080
+[2018-07-11T17:04:44.765] [INFO] default - http server listening: :::8080
+[2018-07-11T17:04:45.893] [INFO] default - http server listening: :::8080
+[2018-07-11T17:05:57.181] [INFO] default - http server listening: :::8080
+[2018-07-11T17:05:58.508] [INFO] default - http server listening: :::8080
+[2018-07-11T17:06:11.268] [INFO] default - POST: /account/register
+[2018-07-11T17:06:29.784] [INFO] default - http server listening: :::8080
+[2018-07-11T17:06:31.055] [INFO] default - http server listening: :::8080
+[2018-07-11T17:06:36.342] [INFO] default - POST: /account/register
+[2018-07-11T17:06:59.818] [INFO] default - http server listening: :::8080
+[2018-07-11T17:07:00.990] [INFO] default - http server listening: :::8080
+[2018-07-11T17:07:17.383] [INFO] default - http server listening: :::8080
+[2018-07-11T17:07:18.603] [INFO] default - http server listening: :::8080
+[2018-07-11T17:07:30.420] [INFO] default - POST: /account/register
+[2018-07-11T17:07:35.649] [INFO] default - POST: /account/register
+[2018-07-11T17:08:37.079] [INFO] default - http server listening: :::8080
+[2018-07-11T17:08:38.320] [INFO] default - http server listening: :::8080
+[2018-07-11T17:09:48.862] [INFO] default - POST: /account/login
+[2018-07-11T17:09:52.344] [INFO] default - POST: /account/login
+[2018-07-11T17:10:27.771] [INFO] default - POST: /account/login
+[2018-07-11T17:48:01.980] [INFO] default - http server listening: :::8080
+[2018-07-11T17:48:03.354] [INFO] default - http server listening: :::8080
+[2018-07-11T17:48:14.585] [INFO] default - http server listening: :::8080
+[2018-07-11T17:48:15.900] [INFO] default - http server listening: :::8080
+[2018-07-11T19:55:45.014] [INFO] default - http server listening: :::8080
+[2018-07-11T19:55:59.030] [INFO] default - GET: /
+[2018-07-11T19:55:59.630] [INFO] default - GET: /favicon.ico
+[2018-07-11T20:02:07.161] [INFO] default - http server listening: :::8080
+[2018-07-11T20:02:52.615] [INFO] default - GET: /
+[2018-07-11T20:04:15.285] [INFO] default - http server listening: :::8080
+[2018-07-11T20:04:17.008] [INFO] default - http server listening: :::8080
+[2018-07-11T20:04:24.600] [INFO] default - GET: /blog/
+[2018-07-11T20:04:28.104] [INFO] default - GET: /blog/1
+[2018-07-11T20:04:37.028] [INFO] default - GET: /blogs/1
+[2018-07-11T20:05:07.137] [INFO] default - http server listening: :::8080
+[2018-07-11T20:05:09.037] [INFO] default - http server listening: :::8080
+[2018-07-11T20:05:12.054] [INFO] default - GET: /blogs/1
+[2018-07-11T20:05:18.064] [INFO] default - GET: /blogs/1
+[2018-07-11T20:05:21.004] [INFO] default - GET: /blogs/12
+[2018-07-11T20:05:31.401] [INFO] default - GET: /blogs/12?a=1
+[2018-07-11T20:16:39.203] [INFO] default - http server listening: :::8080
+[2018-07-11T20:22:25.027] [INFO] default - GET: /blogs/12?a=1
+[2018-07-11T20:23:45.741] [INFO] default - GET: /blogs/12?a=1
+[2018-07-11T20:25:33.442] [INFO] default - POST: /account/register
+[2018-07-11T20:26:00.133] [INFO] default - POST: /account/register
+[2018-07-11T20:26:01.743] [INFO] default - POST: /account/register
+[2018-07-11T20:26:43.020] [INFO] default - POST: /account/register
+[2018-07-11T20:26:48.157] [INFO] default - POST: /account/register
+[2018-07-11T20:26:50.110] [INFO] default - POST: /account/register
+[2018-07-11T20:27:07.089] [INFO] default - POST: /account/register
+[2018-07-11T20:27:32.365] [INFO] default - POST: /account/register
+[2018-07-11T20:27:52.153] [INFO] default - http server listening: :::8080
+[2018-07-11T20:27:57.812] [INFO] default - POST: /account/register
+[2018-07-11T20:29:18.176] [INFO] default - http server listening: :::8080
+[2018-07-11T20:54:58.062] [INFO] default - OPTIONS: /account/register
+[2018-07-11T20:54:58.113] [INFO] default - POST: /account/register
+[2018-07-11T21:04:22.210] [INFO] default - POST: /account/register
+[2018-07-11T21:22:56.778] [INFO] default - GET: /items/1
+[2018-07-11T21:23:45.269] [INFO] default - GET: /items?category=1&brand=2
+[2018-07-11T21:23:52.616] [INFO] default - GET: /items?category=1
+[2018-07-12T11:21:09.089] [INFO] default - http server listening: :::8080
+[2018-07-12T11:21:27.327] [INFO] default - GET: /items/1
+[2018-07-12T11:25:57.896] [INFO] default - http server listening: :::8080
+[2018-07-12T11:25:59.244] [INFO] default - http server listening: :::8080
+[2018-07-12T11:26:13.822] [INFO] default - http server listening: :::8080
+[2018-07-12T11:26:15.114] [INFO] default - http server listening: :::8080
+[2018-07-12T11:26:29.004] [INFO] default - http server listening: :::8080
+[2018-07-12T11:26:30.543] [INFO] default - http server listening: :::8080
+[2018-07-12T11:26:46.116] [INFO] default - GET: /items/1
+[2018-07-12T11:27:04.042] [INFO] default - http server listening: :::8080
+[2018-07-12T11:27:04.575] [INFO] default - http server listening: :::8080
+[2018-07-12T11:27:15.616] [INFO] default - GET: /items/1
+[2018-07-12T11:27:20.133] [INFO] default - GET: /items/1
+[2018-07-12T11:27:33.398] [INFO] default - GET: /items/1
+[2018-07-12T11:27:48.979] [INFO] default - GET: /items/1
+[2018-07-12T11:28:04.567] [INFO] default - http server listening: :::8080
+[2018-07-12T11:28:21.971] [INFO] default - GET: /items?category=1
+[2018-07-12T11:32:53.202] [INFO] default - http server listening: :::8080
+[2018-07-12T11:32:55.160] [INFO] default - http server listening: :::8080
+[2018-07-12T11:32:56.187] [INFO] default - http server listening: :::8080
+[2018-07-12T11:33:03.513] [INFO] default - GET: /items?category=1
+[2018-07-12T11:33:52.105] [INFO] default - http server listening: :::8080
+[2018-07-12T11:33:53.424] [INFO] default - http server listening: :::8080
+[2018-07-12T11:33:58.100] [INFO] default - GET: /items/1
+[2018-07-12T11:50:15.369] [INFO] default - http server listening: :::8080
+[2018-07-12T11:52:01.546] [INFO] default - http server listening: :::8080
+[2018-07-12T11:52:02.814] [INFO] default - http server listening: :::8080
+[2018-07-12T11:52:08.093] [INFO] default - GET: /items/1
+[2018-07-13T11:52:59.760] [INFO] default - http server listening: :::8080
+[2018-07-13T11:53:08.896] [INFO] default - GET: /
+[2018-07-13T11:53:09.527] [INFO] default - GET: /favicon.ico
+[2018-07-13T11:53:42.253] [INFO] default - http server listening: :::8080
+[2018-07-13T11:53:42.793] [INFO] default - http server listening: :::8080
+[2018-07-13T11:53:45.264] [INFO] default - GET: /
+[2018-07-13T11:54:03.147] [INFO] default - http server listening: :::8080
+[2018-07-13T11:54:03.625] [INFO] default - http server listening: :::8080
+[2018-07-13T11:54:03.759] [INFO] default - GET: /
+[2018-07-13T11:54:15.071] [INFO] default - http server listening: :::8080
+[2018-07-13T11:54:22.719] [INFO] default - http server listening: :::8080
+[2018-07-13T11:54:23.817] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:26.685] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:29.252] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:30.313] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:30.792] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:50.997] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:51.975] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:52.634] [INFO] default - http server listening: :::8080
+[2018-07-13T11:56:59.971] [INFO] default - GET: /
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.022] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.023] [INFO] default - 1
+[2018-07-13T11:57:00.024] [INFO] default - 2
+[2018-07-13T11:57:00.024] [INFO] default - 2
+[2018-07-13T11:57:00.024] [INFO] default - 2
+[2018-07-13T11:57:00.024] [INFO] default - 2
+[2018-07-13T11:57:00.024] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:00.025] [INFO] default - 2
+[2018-07-13T11:57:08.785] [INFO] default - GET: /
+[2018-07-13T11:57:08.786] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.787] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.788] [INFO] default - 1
+[2018-07-13T11:57:08.789] [INFO] default - 2
+[2018-07-13T11:57:08.791] [INFO] default - 2
+[2018-07-13T11:57:08.791] [INFO] default - 2
+[2018-07-13T11:57:08.791] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.792] [INFO] default - 2
+[2018-07-13T11:57:08.793] [INFO] default - 2
+[2018-07-13T11:57:08.793] [INFO] default - 2
+[2018-07-13T11:57:08.793] [INFO] default - 2
+[2018-07-13T11:57:08.793] [INFO] default - 2
+[2018-07-13T11:57:33.032] [INFO] default - http server listening: :::8080
+[2018-07-13T11:57:33.506] [INFO] default - http server listening: :::8080
+[2018-07-13T11:57:36.063] [INFO] default - GET: /
+[2018-07-13T11:57:36.107] [INFO] default - 3
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.111] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.112] [INFO] default - 1
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.113] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T11:57:36.114] [INFO] default - 2
+[2018-07-13T13:41:42.377] [INFO] default - http server listening: :::8080
+[2018-07-13T13:41:43.653] [INFO] default - http server listening: :::8080
+[2018-07-13T13:53:44.715] [INFO] default - POST: /account/register
+[2018-07-13T13:54:07.040] [INFO] default - POST: /account/register
+[2018-07-13T13:54:35.034] [INFO] default - http server listening: :::8080
+[2018-07-13T13:54:36.334] [INFO] default - http server listening: :::8080
+[2018-07-13T13:54:48.293] [INFO] default - POST: /account/register
+[2018-07-13T13:55:00.362] [INFO] default - http server listening: :::8080
+[2018-07-13T13:55:00.933] [INFO] default - http server listening: :::8080
+[2018-07-13T13:55:12.635] [INFO] default - POST: /account/register
+[2018-07-13T14:04:51.510] [INFO] default - http server listening: :::8080
+[2018-07-13T14:04:52.620] [INFO] default - http server listening: :::8080
+[2018-07-13T14:04:55.734] [INFO] default - http server listening: :::8080
+[2018-07-13T14:04:56.907] [INFO] default - http server listening: :::8080
+[2018-07-13T14:05:32.053] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:22.004] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:22.437] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:22.941] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:24.149] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:30.091] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:30.925] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:33.966] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:40.263] [INFO] default - http server listening: :::8080
+[2018-07-13T14:07:47.994] [INFO] default - http server listening: :::8080
+[2018-07-13T14:08:07.969] [INFO] default - http server listening: :::8080
+[2018-07-13T14:08:10.156] [INFO] default - http server listening: :::8080
+[2018-07-13T14:11:56.786] [INFO] default - http server listening: :::8080
+[2018-07-13T14:11:58.080] [INFO] default - http server listening: :::8080
+[2018-07-13T14:15:22.666] [INFO] default - http server listening: :::8080
+[2018-07-13T14:15:23.206] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:25.607] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:35.084] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:36.061] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:46.499] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:46.997] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:50.734] [INFO] default - http server listening: :::8080
+[2018-07-13T14:16:51.294] [INFO] default - http server listening: :::8080
+[2018-07-13T14:17:40.903] [INFO] default - http server listening: :::8080
+[2018-07-13T14:19:01.488] [INFO] default - http server listening: :::8080
+[2018-07-13T14:19:02.110] [INFO] default - http server listening: :::8080
+[2018-07-13T14:19:16.877] [INFO] default - http server listening: :::8080
+[2018-07-13T14:19:17.324] [INFO] default - http server listening: :::8080
+[2018-07-13T14:20:23.438] [INFO] default - http server listening: :::8080
+[2018-07-13T14:20:23.962] [INFO] default - http server listening: :::8080
+[2018-07-13T14:20:36.720] [INFO] default - http server listening: :::8080
+[2018-07-13T14:20:37.183] [INFO] default - http server listening: :::8080
+[2018-07-13T14:21:01.212] [INFO] default - http server listening: :::8080
+[2018-07-13T14:21:01.713] [INFO] default - http server listening: :::8080
+[2018-07-13T14:21:08.835] [INFO] default - http server listening: :::8080
+[2018-07-13T14:21:40.789] [INFO] default - http server listening: :::8080
+[2018-07-13T14:21:41.350] [INFO] default - http server listening: :::8080
+[2018-07-13T14:22:23.669] [INFO] default - http server listening: :::8080
+[2018-07-13T14:22:26.215] [INFO] default - http server listening: :::8080
+[2018-07-13T14:22:26.577] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:14.017] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:15.326] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:23.242] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:24.342] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:36.668] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:49.012] [INFO] default - http server listening: :::8080
+[2018-07-13T14:23:50.324] [INFO] default - http server listening: :::8080
+[2018-07-13T14:24:28.302] [INFO] default - http server listening: :::8080
+[2018-07-13T14:25:09.230] [INFO] default - http server listening: :::8080
+[2018-07-13T14:25:10.537] [INFO] default - http server listening: :::8080
+[2018-07-13T14:25:44.289] [INFO] default - POST: /account/register
+[2018-07-13T14:25:47.138] [INFO] default - POST: /account/register
+[2018-07-13T14:26:21.226] [INFO] default - http server listening: :::8080
+[2018-07-13T14:26:21.740] [INFO] default - http server listening: :::8080
+[2018-07-13T14:26:29.858] [INFO] default - POST: /account/register
+[2018-07-13T14:26:35.737] [INFO] default - POST: /account/register
+[2018-07-13T14:27:44.338] [INFO] default - http server listening: :::8080
+[2018-07-13T14:28:17.602] [INFO] default - http server listening: :::8080
+[2018-07-13T14:28:18.137] [INFO] default - http server listening: :::8080
+[2018-07-13T14:28:26.787] [INFO] default - POST: /account/register
+[2018-07-13T14:28:40.838] [INFO] default - POST: /account/register
+[2018-07-13T14:29:19.226] [INFO] default - http server listening: :::8080
+[2018-07-13T14:29:20.535] [INFO] default - http server listening: :::8080
+[2018-07-13T14:30:27.295] [INFO] default - http server listening: :::8080
+[2018-07-13T14:30:27.776] [INFO] default - http server listening: :::8080
+[2018-07-13T14:30:35.883] [INFO] default - POST: /account/register
+[2018-07-13T14:30:48.485] [INFO] default - POST: /account/register
+[2018-07-13T14:31:20.518] [INFO] default - http server listening: :::8080
+[2018-07-13T14:31:20.967] [INFO] default - http server listening: :::8080
+[2018-07-13T14:31:34.984] [INFO] default - POST: /account/register
+[2018-07-13T14:34:14.845] [INFO] default - http server listening: :::8080
+[2018-07-13T14:34:16.119] [INFO] default - http server listening: :::8080
+[2018-07-13T14:36:04.907] [INFO] default - http server listening: :::8080
+[2018-07-13T14:36:05.476] [INFO] default - http server listening: :::8080
+[2018-07-13T14:36:17.047] [INFO] default - POST: /account/login
+[2018-07-13T14:36:22.667] [INFO] default - POST: /account/login
+[2018-07-13T14:36:56.511] [INFO] default - http server listening: :::8080
+[2018-07-13T14:38:21.443] [INFO] default - http server listening: :::8080
+[2018-07-13T14:38:22.569] [INFO] default - http server listening: :::8080
+[2018-07-13T14:39:07.413] [INFO] default - http server listening: :::8080
+[2018-07-13T14:39:07.967] [INFO] default - http server listening: :::8080
+[2018-07-13T14:39:14.784] [INFO] default - POST: /account/login
+[2018-07-13T14:39:16.720] [INFO] default - POST: /account/login
+[2018-07-13T14:39:42.763] [INFO] default - POST: /account/login
+[2018-07-13T14:40:40.317] [INFO] default - http server listening: :::8080
+[2018-07-13T14:40:40.651] [INFO] default - http server listening: :::8080
+[2018-07-13T14:40:53.603] [INFO] default - http server listening: :::8080
+[2018-07-13T14:40:54.198] [INFO] default - http server listening: :::8080
+[2018-07-13T14:48:56.904] [INFO] default - http server listening: :::8080
+[2018-07-13T14:48:58.009] [INFO] default - http server listening: :::8080
+[2018-07-13T14:50:29.941] [INFO] default - POST: /account/register
+[2018-07-13T14:50:40.564] [INFO] default - POST: /account/register
+[2018-07-13T15:07:50.765] [INFO] default - http server listening: :::8080
+[2018-07-13T15:07:52.169] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:18.901] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:20.046] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:30.030] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:34.879] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:36.217] [INFO] default - http server listening: :::8080
+[2018-07-13T15:09:37.754] [INFO] default - http server listening: :::8080
+[2018-07-13T15:10:02.428] [INFO] default - GET: /items/1
+[2018-07-13T15:11:03.012] [INFO] default - http server listening: :::8080
+[2018-07-13T15:11:03.356] [INFO] default - http server listening: :::8080
+[2018-07-13T15:11:11.605] [INFO] default - http server listening: :::8080
+[2018-07-13T15:11:12.911] [INFO] default - http server listening: :::8080
+[2018-07-13T15:11:18.537] [INFO] default - GET: /items/1
+[2018-07-13T15:11:55.405] [INFO] default - http server listening: :::8080
+[2018-07-13T15:11:55.717] [INFO] default - http server listening: :::8080
+[2018-07-13T15:12:01.142] [INFO] default - GET: /items?category=1
+[2018-07-13T15:12:47.786] [INFO] default - GET: /items?category=1&brand=1
+[2018-07-13T15:15:15.368] [INFO] default - http server listening: :::8080
+[2018-07-13T15:15:16.473] [INFO] default - http server listening: :::8080
+[2018-07-15T09:35:56.486] [INFO] default - http server listening: :::8080

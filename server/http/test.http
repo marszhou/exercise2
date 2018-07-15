@@ -1,0 +1,29 @@
+GET http://localhost:8080/ HTTP/1.1
+
+###
+
+GET http://localhost:8080/items/1 HTTP/1.1
+
+###
+
+GET http://localhost:8080/items?category=1&brand=1 HTTP/1.1
+
+###
+
+POST http://localhost:8080/account/register HTTP/1.1
+content-type: application/json
+
+{
+  "username": "matt6",
+  "password": "123"
+}
+
+###
+
+POST http://localhost:8080/account/login HTTP/1.1
+content-type: application/json
+
+{
+  "username": "matt5",
+  "password": "123"
+}
