@@ -5,7 +5,7 @@ import { loginSelectors } from '../../reducers'
 class Login extends Component {
   render() {
     console.log(this.props)
-    const { isRequest, login, history } = this.props
+    const { isRequest, login, location } = this.props
     return (
       <div>
         <h2>登录</h2>
@@ -30,13 +30,7 @@ class Login extends Component {
           <button
             type="button"
             onClick={() => {
-              login(this.username.value, this.password.value).then(
-                () => {
-                  console.log('login success')
-                  history.push('/')
-                },
-                () => console.log('login failed')
-              )
+              login(this.username.value, this.password.value, location.state.from)
             }}
             disabled={isRequest}
           >

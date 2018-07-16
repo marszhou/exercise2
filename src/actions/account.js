@@ -1,4 +1,5 @@
 import api from '../api'
+import { push } from 'connected-react-router'
 
 export const register = (username, password) => dispatch => {
   // 验证一下username password是否合法
@@ -30,17 +31,17 @@ export const register = (username, password) => dispatch => {
   )
 }
 
-export const login = (username, password) => dispatch => {
+export const login = (username, password, from) => dispatch => {
+  console.log(from)
   if (!username || !password) {
-    return Promise.reject(
-      dispatch({
-        type: 'ACCOUNT.LOGIN_ERROR',
-        error: {
-          code: 'FORM_IMCOMPLETED',
-          msg: '用户名密码必须填写'
-        }
-      })
-    )
+    dispatch({
+      type: 'ACCOUNT.LOGIN_ERROR',
+      error: {
+        code: 'FORM_IMCOMPLETED',
+        msg: '用户名密码必须填写'
+      }
+    })
+    return Promise.resolve()
   }
   dispatch({
     type: 'ACCOUNT.LOGIN_REQUEST'
@@ -51,9 +52,11 @@ export const login = (username, password) => dispatch => {
         type: 'ACCOUNT.LOGIN_SUCCESS',
         response: response.data
       })
+      const url = from ? from.pathname + from.search + from.hash : '/'
+      dispatch(push(url))
     },
     ({ response }) => {
-      throw dispatch({
+      dispatch({
         type: 'ACCOUNT.LOGIN_FAILED',
         error: response.data
       })

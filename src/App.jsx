@@ -8,6 +8,7 @@ import LoginedPage from './pages/LoginedPage'
 import { createBrowserHistory } from 'history'
 
 import configureStore from './configureStore'
+import PrivateRoute from './components/PrivateRoute';
 
 const history = createBrowserHistory()
 const store = configureStore(history)
@@ -19,7 +20,7 @@ class App extends Component {
           <div>
             <Switch>
               <Route path="/account" component={Account} />
-              <Route component={LoginedPage} />
+              <PrivateRoute component={LoginedPage} />
             </Switch>
           </div>
         </ConnectedRouter>

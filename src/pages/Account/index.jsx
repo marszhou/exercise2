@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Route, Switch, Redirect, NavLink } from 'react-router-dom'
+import { Switch, Redirect, NavLink } from 'react-router-dom'
 import Register from './Register'
 import Login from './Login'
+import AccountRoute from '../../components/AccountRoute';
 
 const navDefaultStyle = {
   color: 'blue',
@@ -16,8 +17,8 @@ class Account extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/account/register" component={Register} />
-          <Route path="/account/login" component={Login} />
+          <AccountRoute path="/account/register" component={Register} />
+          <AccountRoute path="/account/login" component={Login} />
           <Redirect to="/account/login" />
         </Switch>
 
