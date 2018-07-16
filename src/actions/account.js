@@ -1,30 +1,24 @@
 import api from '../api'
+import _ from 'lodash'
 import { push } from 'connected-react-router'
 
-export const register = (username, password) => dispatch => {
-  // 验证一下username password是否合法
-  // const valid = false
-  // if (!valid) {
-  //   dispatch({
-  //     type: 'ACCOUNT.USERNAME_INVALID',
-  //     message: '用户名不合法（...）'
-  //   })
-
-  //   return Promise.resolve()
-  // }
-
-  return api.account.register(username, password).then(
+export const register = (username, password, password2, gender) => dispatch => {
+  dispatch({
+    type: 'ACCOUNT.REGISTER_REQUEST'
+  })
+  return api.account.register(username, password, password2, gender).then(
     response => {
       // 成功
       dispatch({
         type: 'ACCOUNT.REGISTER_SUCCESS',
         userId: response.data.userId
       })
+      dispatch(push('/account/login'))
     },
-    response => {
+    ({response}) => {
       // 失败
       dispatch({
-        type: 'ACCOUNT.REGISITER_FAILED',
+        type: 'ACCOUNT.REGISTER_FAILED',
         error: response.data
       })
     }
@@ -32,7 +26,6 @@ export const register = (username, password) => dispatch => {
 }
 
 export const login = (username, password, from) => dispatch => {
-  console.log(from)
   if (!username || !password) {
     dispatch({
       type: 'ACCOUNT.LOGIN_ERROR',

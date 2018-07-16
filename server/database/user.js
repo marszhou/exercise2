@@ -6,13 +6,13 @@ module.exports = {
   getByUsername: username => (db, cb) => {
     db.get(`select * from ${TABLE} where username=?`, username, cb)
   },
-  create: (username, password, salt) => (db, cb) => {
+  create: (username, password, salt, gender) => (db, cb) => {
     db.prepare(
       `insert into ${TABLE} \
-      (username, password, salt, create_time ) \
-      values(?, ?, ?, ?)`
+      (username, password, salt, gender, create_time ) \
+      values(?, ?, ?, ?, ?)`
     )
-      .run(username, password, salt, Date.now(), cb)
+      .run(username, password, salt, gender, Date.now(), cb)
       .finalize()
   }
 }
