@@ -2751,3 +2751,51 @@
 [2018-07-16T17:55:04.027] [INFO] default - POST: /account/register
 [2018-07-16T17:55:13.427] [INFO] default - OPTIONS: /account/register
 [2018-07-16T17:55:13.431] [INFO] default - POST: /account/register
+[2018-07-16T17:55:34.048] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:55:34.052] [INFO] default - POST: /account/register
+[2018-07-16T17:57:03.718] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:57:03.723] [INFO] default - POST: /account/register
+[2018-07-16T17:57:51.961] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:57:51.966] [INFO] default - POST: /account/register
+[2018-07-16T17:57:53.704] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:57:53.708] [INFO] default - POST: /account/register
+[2018-07-16T17:57:55.871] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:57:55.875] [INFO] default - POST: /account/register
+[2018-07-16T17:57:56.369] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:57:56.373] [INFO] default - POST: /account/register
+[2018-07-16T17:58:14.466] [INFO] default - http server listening: :::8080
+[2018-07-16T17:58:15.862] [INFO] default - http server listening: :::8080
+[2018-07-16T17:58:16.876] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:58:16.893] [INFO] default - POST: /account/register
+[2018-07-16T17:58:20.763] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:58:20.767] [INFO] default - POST: /account/register
+[2018-07-16T17:58:21.070] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:58:21.074] [INFO] default - POST: /account/register
+[2018-07-16T17:59:03.190] [INFO] default - OPTIONS: /account/register
+[2018-07-16T17:59:03.196] [INFO] default - POST: /account/register
+[2018-07-16T18:04:01.825] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:04:01.830] [INFO] default - POST: /account/register
+[2018-07-16T18:07:09.186] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:07:09.192] [INFO] default - POST: /account/register
+[2018-07-16T18:08:32.530] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:08:32.536] [INFO] default - POST: /account/register
+[2018-07-16T18:08:52.490] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:08:52.496] [INFO] default - POST: /account/register
+[2018-07-16T18:09:01.798] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:09:01.802] [INFO] default - POST: /account/register
+[2018-07-16T18:09:10.934] [INFO] default - http server listening: :::8080
+[2018-07-16T18:09:11.774] [INFO] default - http server listening: :::8080
+[2018-07-16T18:09:15.905] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:09:15.922] [INFO] default - POST: /account/register
+[2018-07-16T18:35:05.495] [INFO] default - OPTIONS: /account/register
+[2018-07-16T18:35:05.501] [INFO] default - POST: /account/register
+[2018-07-16T18:45:50.539] [INFO] default - OPTIONS: /account/login
+[2018-07-16T18:45:50.543] [INFO] default - POST: /account/login
+[2018-07-16T18:46:31.931] [INFO] default - OPTIONS: /account/login
+[2018-07-16T18:46:31.934] [INFO] default - POST: /account/login
+[2018-07-16T18:50:03.391] [INFO] default - OPTIONS: /account/login
+[2018-07-16T18:50:03.395] [INFO] default - POST: /account/login
+[2018-07-16T18:55:09.646] [INFO] default - OPTIONS: /account/login
+[2018-07-16T18:55:09.650] [INFO] default - POST: /account/login
+[2018-07-16T18:57:25.589] [INFO] default - OPTIONS: /account/login
+[2018-07-16T18:57:25.593] [INFO] default - POST: /account/login

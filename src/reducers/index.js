@@ -1,10 +1,11 @@
 import _ from 'lodash'
 import login, * as fromLogin from './login'
 import register, * as fromRegister from './register'
+import message from './message'
 import { combineReducers } from 'redux'
 
 const root = combineReducers({
-  login, register
+  login, register, message
 })
 
 export default root
@@ -24,3 +25,5 @@ export const registerSelectors = _.keys(fromRegister).reduce(
   }),
   {}
 )
+
+export const getMessage = state => state.message

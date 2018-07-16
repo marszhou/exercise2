@@ -1,6 +1,6 @@
 import api from '../api'
-import _ from 'lodash'
 import { push } from 'connected-react-router'
+import { triggerMessage } from './message';
 
 export const register = (username, password, password2, gender) => dispatch => {
   dispatch({
@@ -14,6 +14,7 @@ export const register = (username, password, password2, gender) => dispatch => {
         userId: response.data.userId
       })
       dispatch(push('/account/login'))
+      dispatch(triggerMessage('注册成功，请登录'))
     },
     ({response}) => {
       // 失败
@@ -47,6 +48,8 @@ export const login = (username, password, from) => dispatch => {
       })
       const url = from ? from.pathname + from.search + from.hash : '/'
       dispatch(push(url))
+      dispatch(triggerMessage('登录成功'))
+
     },
     ({ response }) => {
       dispatch({

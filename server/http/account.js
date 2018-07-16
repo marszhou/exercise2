@@ -51,6 +51,7 @@ const validateRegister = data => {
 
 module.exports = (app, db) => {
   app.post('/account/register', async (req, res) => {
+    // await sleep(1000)
     const {username, password, password2, gender} = req.body
     const valid = validateRegister({username, password, password2, gender})
     if (valid !== true) {
