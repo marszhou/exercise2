@@ -1,5 +1,7 @@
 const { v1 } = require('node-uuid')
 const SHA1 = require('sha1')
+const sleep = require('../utils/sleep')
+const _ = require('lodash')
 
 module.exports = (app, db) => {
   app.post('/account/register', async (req, res) => {
@@ -7,7 +9,7 @@ module.exports = (app, db) => {
     const user = await db.user.getByUsername(username)
     if (user) {
       res.status(500).json({
-        error: 'USER_EXISTS',
+        code: 'USER_EXISTS',
         msg: '该用户名已存在'
       })
     } else {
@@ -15,24 +17,24 @@ module.exports = (app, db) => {
       const serializedPassword = SHA1(password + salt)
       await db.user.create(username, serializedPassword, salt)
 
-      res.json({ error: 0 })
+      res.json({ code: 0 })
     }
   })
 
   app.post('/account/login', async (req, res) => {
     const { username, password } = req.body
-
+    // await sleep(5000)
     const user = await db.user.getByUsername(username)
     if (!user) {
       return res.status(500).json({
-        error: 'USER_NOT_EXIST',
+        code: 'USER_NOT_EXIST',
         msg: '没有该用户'
       })
     } else {
       const serializedPassword = SHA1(password + user.salt)
       if (serializedPassword !== user.password) {
         return res.status(500).json({
-          error: 'PASSWORD_WRONG',
+          code: 'PASSWORD_WRONG',
           msg: '用户名密码不匹配'
         })
       } else {
@@ -42,7 +44,8 @@ module.exports = (app, db) => {
         await db.session.create(sessionId, user.id)
 
         return res.json({
-          sessionId
+          sessionId,
+          user: _.omit(user, 'password', 'salt')
         })
       }
     }

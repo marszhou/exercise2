@@ -5,7 +5,7 @@ export const register = (username, password) => dispatch => {
   // const valid = false
   // if (!valid) {
   //   dispatch({
-  //     type: 'ACCOUNT_USERNAME_INVALID',
+  //     type: 'ACCOUNT.USERNAME_INVALID',
   //     message: '用户名不合法（...）'
   //   })
 
@@ -13,15 +13,17 @@ export const register = (username, password) => dispatch => {
   // }
 
   return api.account.register(username, password).then(
-    (response) => { // 成功
+    response => {
+      // 成功
       dispatch({
-        type: 'ACCOUNT_REGISTER_SUCCESS',
+        type: 'ACCOUNT.REGISTER_SUCCESS',
         userId: response.data.userId
       })
     },
-    (response) => { // 失败
+    response => {
+      // 失败
       dispatch({
-        type: 'ACCOUNT_REGISITER_FAILED',
+        type: 'ACCOUNT.REGISITER_FAILED',
         error: response.data
       })
     }
@@ -29,19 +31,30 @@ export const register = (username, password) => dispatch => {
 }
 
 export const login = (username, password) => dispatch => {
-  dispatch({
-    type: 'LOGIN_REQUEST'
-  })
-  api.account.login(username, password).then(
-    (response) => {
+  if (!username || !password) {
+    return Promise.reject(
       dispatch({
-        type: 'LOGIN_SUCCESS',
-        session: response.data.sessionId
+        type: 'ACCOUNT.LOGIN_ERROR',
+        error: {
+          code: 'FORM_IMCOMPLETED',
+          msg: '用户名密码必须填写'
+        }
+      })
+    )
+  }
+  dispatch({
+    type: 'ACCOUNT.LOGIN_REQUEST'
+  })
+  return api.account.login(username, password).then(
+    response => {
+      dispatch({
+        type: 'ACCOUNT.LOGIN_SUCCESS',
+        response: response.data
       })
     },
-    (response) => {
-      dispatch({
-        type: 'LOGIN_FAILED',
+    ({ response }) => {
+      throw dispatch({
+        type: 'ACCOUNT.LOGIN_FAILED',
         error: response.data
       })
     }
