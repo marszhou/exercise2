@@ -1,6 +1,7 @@
 import api from '../api'
-import { push } from 'connected-react-router'
+import { push, replace } from 'connected-react-router'
 import { triggerMessage } from './message';
+import { saveLoginInfo, deleteLoginInfo } from '../utils/localStorage';
 
 export const register = (username, password, password2, gender) => dispatch => {
   dispatch({
@@ -49,7 +50,7 @@ export const login = (username, password, from) => dispatch => {
       const url = from ? from.pathname + from.search + from.hash : '/'
       dispatch(push(url))
       dispatch(triggerMessage('登录成功'))
-
+      saveLoginInfo(response.data)
     },
     ({ response }) => {
       dispatch({
@@ -58,4 +59,13 @@ export const login = (username, password, from) => dispatch => {
       })
     }
   )
+}
+
+export const logout = () => dispatch => {
+  dispatch({
+    type: 'ACCOUNT.LOGOUT'
+  })
+  deleteLoginInfo()
+  dispatch(triggerMessage('退出登录'))
+  dispatch(replace('/account/login'))
 }

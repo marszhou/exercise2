@@ -4,6 +4,19 @@ const session = (state = null, action) => {
   switch (action.type) {
     case 'ACCOUNT.LOGIN_SUCCESS':
       return action.response.sessionId
+    case 'ACCOUNT.LOGOUT':
+      return null
+    default:
+      return state
+  }
+}
+
+const user = (state = null, action) => {
+  switch (action.type) {
+    case 'ACCOUNT.LOGIN_SUCCESS':
+      return action.response.user
+    case 'ACCOUNT.LOGOUT':
+      return null
     default:
       return state
   }
@@ -29,15 +42,6 @@ const error = (state = null, action) => {
     case 'ACCOUNT.LOGIN_FAILED':
     case 'ACCOUNT.LOGIN_ERROR':
       return action.error
-    default:
-      return state
-  }
-}
-
-const user = (state = null, action) => {
-  switch (action.type) {
-    case 'ACCOUNT.LOGIN_SUCCESS':
-      return action.response.user
     default:
       return state
   }

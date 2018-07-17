@@ -2799,3 +2799,16 @@
 [2018-07-16T18:55:09.650] [INFO] default - POST: /account/login
 [2018-07-16T18:57:25.589] [INFO] default - OPTIONS: /account/login
 [2018-07-16T18:57:25.593] [INFO] default - POST: /account/login
+[2018-07-17T16:34:53.234] [INFO] default - http server listening: :::8080
+[2018-07-17T16:38:13.207] [INFO] default - OPTIONS: /account/login
+[2018-07-17T16:38:13.229] [INFO] default - POST: /account/login
+[2018-07-17T16:58:48.007] [INFO] default - OPTIONS: /account/login
+[2018-07-17T16:58:48.011] [INFO] default - POST: /account/login
+[2018-07-17T16:58:52.031] [INFO] default - OPTIONS: /account/login
+[2018-07-17T16:58:52.034] [INFO] default - POST: /account/login
+[2018-07-17T16:59:42.111] [INFO] default - OPTIONS: /account/login
+[2018-07-17T16:59:42.114] [INFO] default - POST: /account/login
+[2018-07-17T17:00:46.737] [INFO] default - OPTIONS: /account/login
+[2018-07-17T17:00:46.740] [INFO] default - POST: /account/login
+[2018-07-17T17:01:05.981] [INFO] default - OPTIONS: /account/login
+[2018-07-17T17:01:05.985] [INFO] default - POST: /account/login
