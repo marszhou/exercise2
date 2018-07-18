@@ -2969,3 +2969,21 @@
 [2018-07-18T14:42:50.112] [INFO] default - PUT: /blogs/1
 [2018-07-18T14:42:55.886] [INFO] default - PUT: /blogs/1111
 [2018-07-18T14:43:22.265] [INFO] default - PUT: /blogs/32
+[2018-07-18T14:45:55.362] [INFO] default - http server listening: :::8080
+[2018-07-18T14:45:56.661] [INFO] default - http server listening: :::8080
+[2018-07-18T14:46:04.500] [INFO] default - PUT: /blogs/111
+[2018-07-18T15:27:17.746] [INFO] default - http server listening: :::8080
+[2018-07-18T15:29:35.817] [INFO] default - http server listening: :::8080
+[2018-07-18T15:29:37.159] [INFO] default - http server listening: :::8080
+[2018-07-18T15:29:42.748] [INFO] default - PUT: /blogs/32
+[2018-07-18T15:29:46.961] [INFO] default - PUT: /blogs/31
+[2018-07-18T15:29:52.476] [INFO] default - PUT: /blogs/11
+[2018-07-18T15:29:58.834] [INFO] default - PUT: /blogs/333
+[2018-07-18T15:30:30.763] [INFO] default - http server listening: :::8080
+[2018-07-18T15:30:31.821] [INFO] default - http server listening: :::8080
+[2018-07-18T15:30:36.625] [INFO] default - http server listening: :::8080
+[2018-07-18T15:31:08.537] [INFO] default - http server listening: :::8080
+[2018-07-18T15:31:09.902] [INFO] default - http server listening: :::8080
+[2018-07-18T15:31:47.040] [INFO] default - DELETE: /blogs/333
+[2018-07-18T15:31:51.331] [INFO] default - DELETE: /blogs/32
+[2018-07-18T15:31:56.572] [INFO] default - PUT: /blogs/32
