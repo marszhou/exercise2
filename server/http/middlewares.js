@@ -20,7 +20,7 @@ const requireLogin = db => async (req, res, next) => {
   }
 
   if (!accessGranted) {
-    res.status(403).json({
+    return res.status(403).json({
       code: 'DENY_ACCESS',
       msg: '无权访问'
     })

@@ -2987,3 +2987,5 @@
 [2018-07-18T15:31:47.040] [INFO] default - DELETE: /blogs/333
 [2018-07-18T15:31:51.331] [INFO] default - DELETE: /blogs/32
 [2018-07-18T15:31:56.572] [INFO] default - PUT: /blogs/32
+[2018-07-18T15:32:38.116] [INFO] default - http server listening: :::8080
+[2018-07-18T15:32:39.209] [INFO] default - http server listening: :::8080
