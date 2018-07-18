@@ -5,12 +5,15 @@ const dbWrapper = getDb => methods => {
     ret[methodName] = (...args) =>
       new Promise((resolve, reject) => {
         const db = getDb()
-        methods[methodName](...args)(db, (error, result) => {
-          // console.log({error, result})
+        methods[methodName](...args)(db, function(error, result) {
           if (error) {
             reject(error)
           } else {
-            resolve(result)
+            if (this.lastID || this.changes) {
+              resolve(_.pick({...this}, 'lastID', 'changes'))
+            } else {
+              resolve(result)
+            }
           }
         })
         db.close()

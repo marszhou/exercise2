@@ -14,9 +14,9 @@ POST http://localhost:8080/account/register HTTP/1.1
 content-type: application/json
 
 {
-  "username": "matt6",
-  "password": "123",
-  "password2": "123",
+  "username": "matt16",
+  "password": "123111",
+  "password2": "123111",
   "gender": 1
 }
 
@@ -28,4 +28,34 @@ content-type: application/json
 {
   "username": "matt5",
   "password": "123"
+}
+
+###
+
+POST http://localhost:8080/blogs HTTP/1.1
+content-type: application/json
+
+{
+  "title": "111",
+  "content": "223"
+}
+
+###
+
+GET http://localhost:8080/blogs/1 HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:8080/blogs/user/1?offset=5 HTTP/1.1
+content-type: application/json
+
+###
+
+PUT http://localhost:8080/blogs/1 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "aaa",
+  "content": "bbb"
 }

@@ -70,9 +70,9 @@ module.exports = (app, db) => {
     } else {
       const salt = v1()
       const serializedPassword = SHA1(password + salt)
-      await db.user.create(username, serializedPassword, salt, gender)
+      const ret = await db.user.create(username, serializedPassword, salt, gender)
 
-      res.json({ code: 0 })
+      res.json({ userId: ret.lastID})
     }
   })
 
