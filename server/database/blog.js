@@ -30,11 +30,11 @@ module.exports = {
       .run(id, cb)
       .finalize()
   },
-  list: (userId, start, length) => (db, cb) => {
+  list: (userId, offset, length) => (db, cb) => {
     return db.all(
       `select * from ${TABLE} \
       where user_id=? \
-      limit ${start}, ${length}`,
+      limit ${offset}, ${length}`,
       userId,
       cb
     )

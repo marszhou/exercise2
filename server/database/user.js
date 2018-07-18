@@ -3,6 +3,9 @@ const _ = require('lodash')
 const TABLE = 'users'
 
 module.exports = {
+  get: id => (db, cb) => {
+    db.get(`select * from ${TABLE} where id=?`, id, cb)
+  },
   getByUsername: username => (db, cb) => {
     db.get(`select * from ${TABLE} where username=?`, username, cb)
   },
