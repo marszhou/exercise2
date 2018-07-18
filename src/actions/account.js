@@ -1,4 +1,4 @@
-import api from '../api'
+import api, { setLoginInfoForAxios, unsetLoginInfoForAxios } from '../api'
 import { push, replace } from 'connected-react-router'
 import { triggerMessage } from './message';
 import { saveLoginInfo, deleteLoginInfo } from '../utils/localStorage';
@@ -43,14 +43,16 @@ export const login = (username, password, from) => dispatch => {
   })
   return api.account.login(username, password).then(
     response => {
+      const {data} = response
       dispatch({
         type: 'ACCOUNT.LOGIN_SUCCESS',
-        response: response.data
+        response: data
       })
       const url = from ? from.pathname + from.search + from.hash : '/'
       dispatch(push(url))
       dispatch(triggerMessage('登录成功'))
-      saveLoginInfo(response.data)
+      saveLoginInfo(data)
+      setLoginInfoForAxios(data.sessionId)
     },
     ({ response }) => {
       dispatch({
@@ -68,4 +70,5 @@ export const logout = () => dispatch => {
   deleteLoginInfo()
   dispatch(triggerMessage('退出登录'))
   dispatch(replace('/account/login'))
+  unsetLoginInfoForAxios()
 }
