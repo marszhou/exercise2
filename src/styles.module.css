@@ -1,0 +1,20 @@
+.defaultLink {
+  color: blue;
+  text-decoration: underline;
+}
+.activeLink {
+  color: black;
+  text-decoration: none;
+}
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: #EFEFEF;
+  text-align: center;
+}
+.content {
+  margin-top: 36px;
+}

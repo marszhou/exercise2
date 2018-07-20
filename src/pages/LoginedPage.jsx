@@ -1,15 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginSelectors } from '../reducers'
-import { Link } from 'react-router-dom'
+import { Link, NavLink, Route, Switch } from 'react-router-dom'
+import Blog from './Blog'
+import styles from '../styles.module.css'
 
 const LoginedPage = ({ loginUser }) => {
+  const linkClassProps = {
+    className: styles.defaultLink,
+    activeClassName: styles.activeLink
+  }
   return (
     <div>
-      登录成功了，你是{loginUser.username}{' '}
-      （只有登录成功后才会显示此页面，如果没有登录身份的时候，访问此页面都转向到/account/login）<Link to="/account/logout">
-        退出登录
-      </Link>
+      <div className={styles.navBar}>
+        欢迎 {loginUser.username}{' '}
+        <NavLink to="/blogs" {...linkClassProps}>
+          日志
+        </NavLink>{' '}
+        <Link to="/account/logout" style={styles.normalStyle}>
+          退出登录
+        </Link>
+      </div>
+      <div className={styles.content}>
+        <Switch>
+          <Route path="/blogs" component={Blog} />
+        </Switch>
+      </div>
     </div>
   )
 }
