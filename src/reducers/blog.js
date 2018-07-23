@@ -12,37 +12,76 @@ const isFormRequest = (state = false, action) => {
   }
 }
 
-const countByUser = (state = {}, action) => {
-  if (action.type === 'BLOG.LIST') {
-    const nextState = {
-      ...state,
-      [action.userId]: action.count
-    }
-    return nextState
+const getUserIdFromAction = action => {
+  switch (action.type) {
+    case 'BLOG.LIST':
+      return action.userId
+    case 'BLOG.CREATE_SUCCESS':
+    case 'BLOG.REMOVED':
+      return action.blog.user_id
+    default:
+      return
   }
+}
+
+const count = (state = 0, action) => {
+  switch (action.type) {
+    case 'BLOG.LIST':
+      return action.count
+    case 'BLOG.CREATE_SUCCESS':
+      return state + 1
+    case 'BLOG.REMOVED':
+      const count = state - 1
+      return count >= 0 ? count : 0
+    default:
+      return state
+  }
+}
+
+const countByUser = (state = {}, action) => {
+  const userId = getUserIdFromAction(action)
+
+  if (userId) {
+    return {
+      ...state,
+      [userId]: count(state[userId], action)
+    }
+  }
+
   return state
 }
 
 const offset = (state = {}, action) => {
-  if (action.type === 'BLOG.LIST') {
-    const { offset, list } = action
-    const nextState = {
-      ...state,
-      ...list.reduce((ret, blog, index) => {
-        ret[offset + index] = blog.id
+  switch (action.type) {
+    case 'BLOG.LIST':
+      const { offset, list } = action
+      const nextState = {
+        ...state,
+        ...list.reduce((ret, blog, index) => {
+          ret[offset + index] = blog.id
+          return ret
+        }, {})
+      }
+      return nextState
+    case 'BLOG.REMOVED':
+      const { blog } = action
+      return Object.keys(state).reduce((ret, offset) => {
+        if (ret[offset] !== blog.id) {
+          return { [offset]: state[offset] }
+        }
         return ret
       }, {})
-    }
-    return nextState
+    default:
+      return state
   }
-  return state
 }
 
 const offsetByUser = (state = {}, action) => {
-  if (action.userId) {
+  const userId = getUserIdFromAction(action)
+  if (userId) {
     const nextState = {
       ...state,
-      [action.userId]: offset(state[action.userId], action)
+      [userId]: offset(state[userId], action)
     }
     return nextState
   }
@@ -64,5 +103,8 @@ const byId = (state = {}, action) => {
 }
 
 export default combineReducers({
-  isFormRequest, countByUser, offsetByUser, byId
+  isFormRequest,
+  countByUser,
+  offsetByUser,
+  byId
 })
