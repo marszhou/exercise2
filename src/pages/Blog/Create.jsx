@@ -1,46 +1,16 @@
 import React, { Component } from 'react'
-import BraftEditor from 'braft-editor'
-import 'braft-editor/dist/braft.css'
-import styles from '../../styles.module.css'
+import BlogForm from '../../components/BlogForm';
 class BlogCreate extends Component {
   render () {
-
-    const editorProps = {
-      height: 200,
-      controls: [
-        'bold', 'italic', 'underline', 'strike-through',
-      ],
-      contentFormat: 'html',
-      initialContent: '<p>Hello World!</p>',
-      onChange: this.handleChange,
-    }
-
     return (
       <div className="demo">
-        <table className={styles.blogTable}>
-          <tbody>
-            <tr >
-              <td >标题</td>
-              <td><input type='text' /></td>
-            </tr>
-            <tr>
-              <td >内容</td>
-              <td><BraftEditor {...editorProps}/></td>
-            </tr>
-
-          </tbody>
-        </table>
-
-
+        <BlogForm ref={el => this.form = el} onChange={(value) => console.log(value)}/>
+        <p style={{textAlign: 'center'}}>
+          <button type='button' onClick={() => this.form.clear()}>保存</button>{' '}
+        </p>
       </div>
     )
-
   }
-
-  handleChange = (content) => {
-    console.log(content)
-  }
-
 }
 
 export default BlogCreate
