@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect, NavLink } from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 import BlogCreate from './Create'
 import BlogEdit from './Edit'
 import BlogList from './List'
