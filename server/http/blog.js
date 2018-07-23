@@ -26,9 +26,8 @@ module.exports = (app, db) => {
     const { title, content } = req.body
     const userId = req.login.id
     const ret = await db.blog.create(userId, title, content)
-    res.json({
-      blogId: ret.lastID
-    })
+    const blog = await db.blog.get(ret.lastID)
+    res.json(blog)
   })
 
   app.get('/blogs/user/:userId', async (req, res) => {
@@ -40,7 +39,6 @@ module.exports = (app, db) => {
 
   app.get('/blogs/user/:userId/count', async (req, res) => {
     const userId = req.params.userId
-    const offset = req.query.offset || 0
     const ret = await db.blog.count(userId)
     res.json(ret)
   })
@@ -53,7 +51,8 @@ module.exports = (app, db) => {
       const blogId = req.params.blogId
       const { title, content } = req.body
       const ret = await db.blog.update(blogId, { title, content })
-      res.json(ret)
+      const blog = await db.blog.get(blogId)
+      res.json(blog)
     }
   )
 
