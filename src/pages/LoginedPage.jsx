@@ -13,13 +13,15 @@ const LoginedPage = ({ loginUser }) => {
   return (
     <div>
       <div className={styles.navBar}>
-        欢迎 {loginUser.username}{' '}
+        · 欢迎 {loginUser.username} ·{' '}
         <NavLink to="/blogs" {...linkClassProps}>
           日志
         </NavLink>{' '}
+        ·{' '}
         <Link to="/account/logout" style={styles.normalStyle}>
           退出登录
-        </Link>
+        </Link>{' '}
+        ·
       </div>
       <div className={styles.content}>
         <Switch>

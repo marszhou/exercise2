@@ -8,7 +8,6 @@ import BlogView from './View'
 import styles from '../../styles.module.css'
 
 const index = ({ match }) => {
-  console.log(match)
   const linkClassProps = {
     className: styles.defaultLink,
     activeClassName: styles.activeLink

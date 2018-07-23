@@ -6,9 +6,13 @@
     "Base64": "^1.0.1",
     "axios": "^0.18.0",
     "bluebird": "^3.5.1",
+    "braft-editor": "^1.9.8",
     "connected-react-router": "^4.3.0",
     "custom-react-scripts": "0.2.2",
+    "draft-js": "^0.10.5",
+    "draftjs-to-html": "^0.8.4",
     "history": "^4.7.2",
+    "html-to-draftjs": "^1.4.0",
     "node-cryptojs-aes": "^0.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -22,6 +26,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "log4js": "^2.10.0",
@@ -34,7 +43,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "babel-node server/index.js",
-    "server-dev": "node-dev server/index.js"
+    "init-db": "rm ./data/d1.db; sqlite3 ./data/database.db < ./data/dump.sql",
+    "build-server": "babel server --out-dir server-build",
+    "server": "node server-build/index.js",
+    "server-dev": "node-dev server/index.js "
   }
 }

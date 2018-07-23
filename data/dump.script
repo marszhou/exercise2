@@ -1,0 +1,10 @@
+.output ./dump1.sql
+.schema
+.mode insert items
+select * from items;
+.mode insert brands
+select * from brands;
+.mode insert categories
+select * from categories;
+.mode insert category_item_set
+select * from category_item_set;

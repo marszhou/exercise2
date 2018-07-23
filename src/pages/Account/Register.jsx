@@ -33,6 +33,7 @@ class Register extends Component {
           ref={form => (this.form = form)}
           onSubmit={e => {
             e.preventDefault()
+            console.log(this.form.gender)
             if (isRequest) return
             const username = this.username.value.trim()
             const password = this.password.value.trim()

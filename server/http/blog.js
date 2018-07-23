@@ -38,6 +38,13 @@ module.exports = (app, db) => {
     res.json(ret)
   })
 
+  app.get('/blogs/user/:userId/count', async (req, res) => {
+    const userId = req.params.userId
+    const offset = req.query.offset || 0
+    const ret = await db.blog.count(userId)
+    res.json(ret)
+  })
+
   app.put(
     '/blogs/:blogId',
     requireLogin(db),

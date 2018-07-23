@@ -48,7 +48,12 @@ content-type: application/json
 
 ###
 
-GET http://localhost:8080/blogs/user/1?offset=5 HTTP/1.1
+GET http://localhost:8080/blogs/user/1?offset=0 HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:8080/blogs/user/1/count HTTP/1.1
 content-type: application/json
 
 ###

@@ -1,5 +1,7 @@
 'use strict'
 
+require("babel-core/register");
+require("babel-polyfill");
 const getHttpServer = require('./utils/get-http-server')
 const express = require('express')
 const app = express()
