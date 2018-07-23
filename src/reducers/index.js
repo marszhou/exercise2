@@ -2,10 +2,11 @@ import _ from 'lodash'
 import login, * as fromLogin from './login'
 import register, * as fromRegister from './register'
 import message from './message'
+import blog from './blog'
 import { combineReducers } from 'redux'
 
 const root = combineReducers({
-  login, register, message
+  login, register, message, blog
 })
 
 export default root

@@ -1,5 +1,6 @@
 import api from '../api'
 import { triggerMessage } from './message'
+import { loginSelectors } from '../reducers'
 
 export const create = ({ title, content }) => dispatch => {
   if (!(title || content)) {
@@ -10,10 +11,9 @@ export const create = ({ title, content }) => dispatch => {
     type: 'BLOG.FORM_REQUEST'
   })
   return api.blog.create({ title, content }).then(({ data }) => {
-    const { blogId } = data
     dispatch({
-      type: 'BLOG.FORM_SUCCESS',
-      blogId
+      type: 'BLOG.CREATE_SUCCESS',
+      blog: data
     })
     dispatch(triggerMessage('日志创建成功'))
   })
@@ -25,13 +25,12 @@ export const update = (id, { title, content }) => dispatch => {
     return Promise.resolve()
   }
   dispatch({
-    type: 'BLOG.FORM_REQUEST'
+    type: 'BLOG.UPDATE_REQUEST'
   })
   return api.blog.update(id, { title, content }).then(({ data }) => {
-    const { blogId } = data
     dispatch({
       type: 'BLOG.FORM_SUCCESS',
-      blogId
+      blog: data
     })
     dispatch(triggerMessage('日志修改成功'))
   })
@@ -61,6 +60,7 @@ export const list = (userId, offset) => dispatch => {
   return Promise.all([count, list]).then(([{ count }, { list }]) => {
     dispatch({
       type: 'BLOG.LIST',
+      userId,
       count: count.rc,
       offset,
       list
