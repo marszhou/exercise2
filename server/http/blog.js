@@ -62,8 +62,16 @@ module.exports = (app, db) => {
     validBlogRequest,
     async (req, res) => {
       const blogId = req.params.blogId
-      const ret = await db.blog.delete(blogId)
-      res.json(ret)
+      const blog = await db.blog.get(blogId)
+      if (!blog) {
+        res.status(500).json({
+          code: 'BLOG_NOT_EXISTS',
+          msg: 'blog不存在'
+        })
+      } else {
+        await db.blog.delete(blogId)
+        res.json(blog)
+      }
     }
   )
 }
