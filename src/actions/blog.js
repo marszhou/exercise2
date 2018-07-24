@@ -67,3 +67,18 @@ export const listByUser = (userId, offset) => dispatch => {
     })
   })
 }
+
+export const list = offset => dispatch => {
+  const count = api.blog.count()
+  const list = api.blog.list(offset)
+  return Promise.all([count, list]).then(
+    ([{ data: count }, { data: list }]) => {
+      dispatch({
+        type: 'BLOG.LIST',
+        count: count.rc,
+        offset,
+        list
+      })
+    }
+  )
+}
