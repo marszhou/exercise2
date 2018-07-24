@@ -12,7 +12,7 @@ export const update = (id, { title, content }) =>
 
 export const remove = id => axios.delete(baseURL + '/' + id)
 
-export const list = (userId, offset = 0) =>
+export const listByUser = (userId, offset = 0) =>
   axios.get(baseURL + `/user/${userId}`, { params: { offset } })
 
-export const count = userId => axios.get(baseURL + `/user/${userId}/count`)
+export const countByUser = userId => axios.get(baseURL + `/user/${userId}/count`)
