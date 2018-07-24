@@ -30,7 +30,7 @@ module.exports = {
       .run(id, cb)
       .finalize()
   },
-  list: (userId, offset, length) => (db, cb) => {
+  listByUser: (userId, offset, length) => (db, cb) => {
     return db.all(
       `select * from ${TABLE} \
       where user_id=? \
@@ -39,12 +39,23 @@ module.exports = {
       cb
     )
   },
-  count: userId => (db, cb) => {
+  countByUser: userId => (db, cb) => {
     const { rc } = db.get(
       `select count(*) as rc from ${TABLE} where user_id=?`,
       userId,
       cb
     )
+    return rc
+  },
+  list: (offset, length) => (db, cb) => {
+    return db.all(
+      `select * from ${TABLE} \
+      limit ${offset}, ${length}`,
+      cb
+    )
+  },
+  count: () => (db, cb) => {
+    const { rc } = db.get(`select count(*) as rc from ${TABLE} `, cb)
     return rc
   }
 }

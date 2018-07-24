@@ -17,7 +17,7 @@ module.exports = (app, db) => {
     next()
   }
 
-  app.get('/blogs/:blogId', async (req, res) => {
+  app.get('/blogs/:blogId(\\d+)', async (req, res) => {
     const blog = await db.blog.get(req.params.blogId)
     res.json(blog)
   })
@@ -30,21 +30,32 @@ module.exports = (app, db) => {
     res.json(blog)
   })
 
-  app.get('/blogs/user/:userId', async (req, res) => {
+  app.get('/blogs/user/:userId(\\d+)', async (req, res) => {
     const userId = req.params.userId
     const offset = req.query.offset || 0
-    const ret = await db.blog.list(userId, offset, 10)
+    const ret = await db.blog.listByUser(userId, offset, 10)
     res.json(ret)
   })
 
-  app.get('/blogs/user/:userId/count', async (req, res) => {
+  app.get('/blogs/user/:userId(\\d+)/count', async (req, res) => {
     const userId = req.params.userId
-    const ret = await db.blog.count(userId)
+    const ret = await db.blog.countByUser(userId)
+    res.json(ret)
+  })
+
+  app.get('/blogs', async (req, res) => {
+    const offset = req.query.offset || 0
+    const ret = await db.blog.list(offset, 10)
+    res.json(ret)
+  })
+
+  app.get('/blogs/count', async (req, res) => {
+    const ret = await db.blog.count()
     res.json(ret)
   })
 
   app.put(
-    '/blogs/:blogId',
+    '/blogs/:blogId(\\d+)',
     requireLogin(db),
     validBlogRequest,
     async (req, res) => {
@@ -57,7 +68,7 @@ module.exports = (app, db) => {
   )
 
   app.delete(
-    '/blogs/:blogId',
+    '/blogs/:blogId(\\d+)',
     requireLogin(db),
     validBlogRequest,
     async (req, res) => {

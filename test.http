@@ -72,3 +72,13 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 DELETE http://localhost:8080/blogs/35 HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
+
+###
+
+GET http://localhost:8080/blogs/?offset=0 HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:8080/blogs/count HTTP/1.1
+content-type: application/json
