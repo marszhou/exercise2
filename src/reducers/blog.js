@@ -24,9 +24,9 @@ const getUserIdFromAction = action => {
   }
 }
 
-const count = (state = 0, action) => {
+const count = (listActionName) =>  (state = 0, action) => {
   switch (action.type) {
-    case 'BLOG.LIST_BY_USER':
+    case listActionName:
       return action.count
     case 'BLOG.CREATE_SUCCESS':
       return state + 1
@@ -44,16 +44,16 @@ const countByUser = (state = {}, action) => {
   if (userId) {
     return {
       ...state,
-      [userId]: count(state[userId], action)
+      [userId]: count('BLOG.LIST_BY_USER')(state[userId], action)
     }
   }
 
   return state
 }
 
-const offset = (state = {}, action) => {
+const offset = (listActionName) => (state = {}, action) => {
   switch (action.type) {
-    case 'BLOG.LIST_BY_USER':
+    case listActionName:
       const { offset, list } = action
       const nextState = {
         ...state,
@@ -81,12 +81,13 @@ const offsetByUser = (state = {}, action) => {
   if (userId) {
     const nextState = {
       ...state,
-      [userId]: offset(state[userId], action)
+      [userId]: offset('BLOG.LIST_BY_USER')(state[userId], action)
     }
     return nextState
   }
   return state
 }
+
 
 const byId = (state = {}, action) => {
   if (action.type === 'BLOG.LIST_BY_USER') {
@@ -106,5 +107,7 @@ export default combineReducers({
   isFormRequest,
   countByUser,
   offsetByUser,
-  byId
+  byId,
+  count: count('BLOG.LIST'),
+  offset: offset('BLOG.LIST')
 })

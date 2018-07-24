@@ -1,6 +1,5 @@
 import api from '../api'
 import { triggerMessage } from './message'
-import { loginSelectors } from '../reducers'
 
 export const create = ({ title, content }) => dispatch => {
   if (!(title || content)) {
