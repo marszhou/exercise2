@@ -1,14 +1,14 @@
 GET http://localhost:8080/ HTTP/1.1
 
-###
+### 获取指定商品
 
 GET http://localhost:8080/items/1 HTTP/1.1
 
-###
+### 商品列表（按category/brand过滤）
 
 GET http://localhost:8080/items?category=1&brand=1 HTTP/1.1
 
-###
+### 注册
 
 POST http://localhost:8080/account/register HTTP/1.1
 content-type: application/json
@@ -20,7 +20,7 @@ content-type: application/json
   "gender": 1
 }
 
-###
+### 登录
 
 POST http://localhost:8080/account/login HTTP/1.1
 content-type: application/json
@@ -30,7 +30,7 @@ content-type: application/json
   "password": "123"
 }
 
-###
+### 创建blog
 
 POST http://localhost:8080/blogs HTTP/1.1
 content-type: application/json
@@ -41,22 +41,22 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
   "content": "223"
 }
 
-###
+### 获取指定blog
 
 GET http://localhost:8080/blogs/1 HTTP/1.1
 content-type: application/json
 
-###
+###  按位置(offset)获取指定用户blog列表
 
 GET http://localhost:8080/blogs/user/1?offset=0 HTTP/1.1
 content-type: application/json
 
-###
+### 获取某用户blog数量
 
 GET http://localhost:8080/blogs/user/1/count HTTP/1.1
 content-type: application/json
 
-###
+### 更新blog
 
 PUT http://localhost:8080/blogs/36 HTTP/1.1
 content-type: application/json
@@ -67,18 +67,18 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
   "content": "bbccc"
 }
 
-###
+### 删除blog
 
 DELETE http://localhost:8080/blogs/35 HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 
-###
+### 按位置(offset)列表
 
 GET http://localhost:8080/blogs/?offset=0 HTTP/1.1
 content-type: application/json
 
-###
+### 获得blog数量
 
 GET http://localhost:8080/blogs/count HTTP/1.1
 content-type: application/json
