@@ -14,7 +14,7 @@ const isFormRequest = (state = false, action) => {
 
 const getUserIdFromAction = action => {
   switch (action.type) {
-    case 'BLOG.LIST':
+    case 'BLOG.LIST_BY_USER':
       return action.userId
     case 'BLOG.CREATE_SUCCESS':
     case 'BLOG.REMOVED':
@@ -26,7 +26,7 @@ const getUserIdFromAction = action => {
 
 const count = (state = 0, action) => {
   switch (action.type) {
-    case 'BLOG.LIST':
+    case 'BLOG.LIST_BY_USER':
       return action.count
     case 'BLOG.CREATE_SUCCESS':
       return state + 1
@@ -53,7 +53,7 @@ const countByUser = (state = {}, action) => {
 
 const offset = (state = {}, action) => {
   switch (action.type) {
-    case 'BLOG.LIST':
+    case 'BLOG.LIST_BY_USER':
       const { offset, list } = action
       const nextState = {
         ...state,
@@ -89,7 +89,7 @@ const offsetByUser = (state = {}, action) => {
 }
 
 const byId = (state = {}, action) => {
-  if (action.type === 'BLOG.LIST') {
+  if (action.type === 'BLOG.LIST_BY_USER') {
     const nextState = {
       ...state,
       ...action.list.reduce((ret, blog) => {
