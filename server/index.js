@@ -30,3 +30,5 @@ app.use(function(req, res, next) {
 require('./http/account')(app, db)
 require('./http/item')(app, db)
 require('./http/blog')(app, db)
+require('./http/brand')(app, db)
+require('./http/category')(app, db)

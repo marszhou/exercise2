@@ -82,3 +82,19 @@ content-type: application/json
 
 GET http://localhost:8080/blogs/count HTTP/1.1
 content-type: application/json
+
+### 获取所有品牌
+GET http://localhost:8080/brands HTTP/1.1
+content-type: application/json
+
+### 获取指定品牌
+GET http://localhost:8080/brands/1 HTTP/1.1
+content-type: application/json
+
+### 获取所有分类
+GET http://localhost:8080/categories HTTP/1.1
+content-type: application/json
+
+### 获取指定分类
+GET http://localhost:8080/categories/1 HTTP/1.1
+content-type: application/json
