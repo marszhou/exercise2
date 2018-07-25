@@ -1,4 +1,5 @@
 const { requireLogin } = require('./middlewares')
+const _ = require('lodash')
 
 module.exports = (app, db) => {
   const validBlogRequest = async (req, res, next) => {
@@ -45,8 +46,9 @@ module.exports = (app, db) => {
 
   app.get('/blogs', async (req, res) => {
     const offset = req.query.offset || 0
-    const ret = await db.blog.list(offset, 10)
-    res.json(ret)
+    const blogs = await db.blog.list(offset, 10)
+    const users = await db.user.in(_.uniq(blogs.map(b => b.user_id)))
+    res.json({blogs, users: users.map(user => _.omit(user, 'password', 'salt'))})
   })
 
   app.get('/blogs/count', async (req, res) => {

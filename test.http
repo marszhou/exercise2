@@ -30,6 +30,18 @@ content-type: application/json
   "password": "123"
 }
 
+
+### 按位置(offset)列表
+
+GET http://localhost:8080/blogs/?offset=0 HTTP/1.1
+content-type: application/json
+
+### 获得blog数量
+
+GET http://localhost:8080/blogs/count HTTP/1.1
+content-type: application/json
+
+
 ### 创建blog
 
 POST http://localhost:8080/blogs HTTP/1.1
@@ -72,16 +84,6 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 DELETE http://localhost:8080/blogs/35 HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
-
-### 按位置(offset)列表
-
-GET http://localhost:8080/blogs/?offset=0 HTTP/1.1
-content-type: application/json
-
-### 获得blog数量
-
-GET http://localhost:8080/blogs/count HTTP/1.1
-content-type: application/json
 
 ### 获取所有品牌
 GET http://localhost:8080/brands HTTP/1.1
