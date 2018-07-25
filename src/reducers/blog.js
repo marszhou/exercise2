@@ -19,7 +19,7 @@ const getUserIdFromAction = action => {
       return action.userId
     case 'BLOG.CREATE_SUCCESS':
     case 'BLOG.REMOVED':
-      return action.blog.user_id
+      return action.users[0].id
     default:
       return
   }
@@ -53,21 +53,21 @@ const countByUser = (state = {}, action) => {
 }
 
 const offset = listActionName => (state = {}, action) => {
+  const { offset, blogs } = action
+
   switch (action.type) {
     case listActionName:
-      const { offset, list } = action
       const nextState = {
         ...state,
-        ...list.reduce((ret, blog, index) => {
+        ...blogs.reduce((ret, blog, index) => {
           ret[offset + index] = blog.id
           return ret
         }, {})
       }
       return nextState
     case 'BLOG.REMOVED':
-      const { blog } = action
       return Object.keys(state).reduce((ret, offset) => {
-        if (ret[offset] !== blog.id) {
+        if (ret[offset] !== blogs[0].id) {
           return { [offset]: state[offset] }
         }
         return ret
@@ -90,10 +90,10 @@ const offsetByUser = (state = {}, action) => {
 }
 
 const byId = (state = {}, action) => {
-  if (action.type === 'BLOG.LIST_BY_USER') {
+  if (action.blogs) {
     const nextState = {
       ...state,
-      ...action.list.reduce((ret, blog) => {
+      ...action.blogs.reduce((ret, blog) => {
         ret[blog.id] = blog
         return ret
       }, {})

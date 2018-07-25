@@ -27,8 +27,8 @@ class BlogCreate extends Component {
   }
 }
 
-BlogCreate = connect(state => {
+BlogCreate = connect(state => ({
   isRequest: blogSelectors.getIsFormRequest(state)
-}, actions.blog)(BlogCreate)
+}), actions.blog)(BlogCreate)
 
 export default BlogCreate
