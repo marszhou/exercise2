@@ -8,5 +8,4 @@ module.exports = (app, db) => {
     const category = await db.category.get(req.params.categoryId)
     res.json(category)
   })
-
 }

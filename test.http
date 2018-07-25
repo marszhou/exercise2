@@ -98,3 +98,31 @@ content-type: application/json
 ### 获取指定分类
 GET http://localhost:8080/categories/1 HTTP/1.1
 content-type: application/json
+
+### 获取购物车
+GET http://localhost:8080/cart HTTP/1.1
+content-type: application/json
+Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
+
+### 添加购物车
+POST http://localhost:8080/cart/add HTTP/1.1
+content-type: application/json
+Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
+
+{
+  "itemId":1, "number": 2
+}
+
+### 设置购物车
+POST http://localhost:8080/cart/set HTTP/1.1
+content-type: application/json
+Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
+
+{
+  "itemId":1, "number": 2
+}
+
+### 清空购物车
+DELETE http://localhost:8080/cart HTTP/1.1
+content-type: application/json
+Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
