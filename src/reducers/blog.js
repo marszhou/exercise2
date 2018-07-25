@@ -6,7 +6,7 @@ const isFormRequest = (state = false, action) => {
     case 'BLOG.FORM_REQUEST':
       return true
     case 'BLOG.CREATE_SUCCESS':
-    case 'BLOG.UPDATE_REQUEST':
+    case 'BLOG.UPDATE_SUCCESS':
       return false
     default:
       return state
@@ -150,3 +150,5 @@ export const getPagination = (state, userId, currentPage) => {
   const count = state.count
   return calcuatePagination(currentPage, pageSize, count)
 }
+
+export const getIsFormRequest = state => state.isFormRequest

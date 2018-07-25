@@ -35,11 +35,11 @@ export const update = (id, { title, content }) => dispatch => {
   })
 }
 
-export const remove = id => (dispatch, getState) => {
-  return api.blog.remove(id).then(() => {
+export const remove = id => (dispatch) => {
+  return api.blog.remove(id).then(({data}) => {
     dispatch({
       type: 'BLOG.REMOVED',
-      blogId: id
+      blog: data
     })
   })
 }
