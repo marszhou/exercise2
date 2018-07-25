@@ -6,20 +6,24 @@ import blog, * as fromBlog from './blog'
 import { combineReducers } from 'redux'
 
 const root = combineReducers({
-  login, register, message, blog
+  login,
+  register,
+  message,
+  blog
 })
 
 export default root
 
-const groupSelector = (namespace, statePath) => _.keys(namespace).reduce(
-  (ret, name) => ({
-    ...ret,
-    [name]: state => namespace[name](_.get(state, statePath))
-  }),
-  {}
-)
+const makeGroupSelectors = (namespace, statePath) =>
+  _.keys(namespace).reduce(
+    (ret, name) => ({
+      ...ret,
+      [name]: state => namespace[name](_.get(state, statePath))
+    }),
+    {}
+  )
 
-export const loginSelectors = groupSelector(fromLogin, 'login')
-export const registerSelectors = groupSelector(fromRegister, 'register')
+export const loginSelectors = makeGroupSelectors(fromLogin, 'login')
+export const registerSelectors = makeGroupSelectors(fromRegister, 'register')
 export const getMessage = state => state.message
-export const blogSelectors = groupSelector(fromBlog, 'blog')
+export const blogSelectors = makeGroupSelectors(fromBlog, 'blog')
