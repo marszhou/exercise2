@@ -55,7 +55,7 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 
 ### 获取指定blog
 
-GET http://localhost:8080/blogs/1 HTTP/1.1
+GET http://localhost:8080/blogs/44 HTTP/1.1
 content-type: application/json
 
 ###  按位置(offset)获取指定用户blog列表
@@ -81,7 +81,7 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 
 ### 删除blog
 
-DELETE http://localhost:8080/blogs/35 HTTP/1.1
+DELETE http://localhost:8080/blogs/43 HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 

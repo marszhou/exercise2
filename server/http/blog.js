@@ -1,6 +1,18 @@
 const { requireLogin } = require('./middlewares')
 const _ = require('lodash')
 
+const formatUser = user => _.omit(user, 'password', 'salt')
+const outputBlog = async (db, res, blogId) => {
+  const blog = await db.blog.get(blogId)
+  const user = await db.user.get(blog.user_id)
+  res.json({ blogs: [blog], users: [formatUser(user)] })
+}
+const outputBlogs = async (db, res, offset, queryFunc) => {
+  const blogs = await queryFunc(offset, 10)
+  const users = await db.user.in(_.uniq(blogs.map(b => b.user_id)))
+  res.json({ blogs, users: users.map(formatUser) })
+}
+
 module.exports = (app, db) => {
   const validBlogRequest = async (req, res, next) => {
     const blogId = req.params.blogId
@@ -19,23 +31,20 @@ module.exports = (app, db) => {
   }
 
   app.get('/blogs/:blogId(\\d+)', async (req, res) => {
-    const blog = await db.blog.get(req.params.blogId)
-    res.json(blog)
+    outputBlog(db, res, req.params.blogId)
   })
 
   app.post('/blogs', requireLogin(db), async (req, res) => {
     const { title, content } = req.body
     const userId = req.login.id
     const ret = await db.blog.create(userId, title, content)
-    const blog = await db.blog.get(ret.lastID)
-    res.json(blog)
+    outputBlog(db, res, ret.lastID)
   })
 
   app.get('/blogs/user/:userId(\\d+)', async (req, res) => {
     const userId = req.params.userId
     const offset = req.query.offset || 0
-    const ret = await db.blog.listByUser(userId, offset, 10)
-    res.json(ret)
+    outputBlogs(db, res, offset, _.partial(db.blog.listByUser, userId))
   })
 
   app.get('/blogs/user/:userId(\\d+)/count', async (req, res) => {
@@ -46,9 +55,7 @@ module.exports = (app, db) => {
 
   app.get('/blogs', async (req, res) => {
     const offset = req.query.offset || 0
-    const blogs = await db.blog.list(offset, 10)
-    const users = await db.user.in(_.uniq(blogs.map(b => b.user_id)))
-    res.json({blogs, users: users.map(user => _.omit(user, 'password', 'salt'))})
+    outputBlogs(db, res, offset, db.blog.list)
   })
 
   app.get('/blogs/count', async (req, res) => {
@@ -64,8 +71,7 @@ module.exports = (app, db) => {
       const blogId = req.params.blogId
       const { title, content } = req.body
       const ret = await db.blog.update(blogId, { title, content })
-      const blog = await db.blog.get(blogId)
-      res.json(blog)
+      outputBlog(db, res, blogId)
     }
   )
 
@@ -75,16 +81,8 @@ module.exports = (app, db) => {
     validBlogRequest,
     async (req, res) => {
       const blogId = req.params.blogId
-      const blog = await db.blog.get(blogId)
-      if (!blog) {
-        res.status(500).json({
-          code: 'BLOG_NOT_EXISTS',
-          msg: 'blog不存在'
-        })
-      } else {
-        await db.blog.delete(blogId)
-        res.json(blog)
-      }
+      outputBlog(db, res, blogId)
+      await db.blog.delete(blogId)
     }
   )
 }

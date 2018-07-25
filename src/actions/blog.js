@@ -56,7 +56,7 @@ export const get = id => dispatch => {
 export const listByUser = (userId, offset) => dispatch => {
   const count = api.blog.countByUser(userId)
   const list = api.blog.listByUser(userId, offset)
-  return Promise.all([count, list]).then(([{ count }, { list }]) => {
+  return Promise.all([count, list]).then(([{ data:count }, { data:list }]) => {
     dispatch({
       type: 'BLOG.LIST_BY_USER',
       userId,
