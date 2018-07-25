@@ -9,7 +9,16 @@ module.exports = (app, db) => {
 
   app.get('/items/:itemId', async (req, res) => {
     const item = await db.item.get(req.params.itemId)
-    res.json(item)
+    if (item) {
+      const categories = await db.item.getCategories(req.params.itemId)
+      item.categories = categories
+      res.json(item)
+    } else {
+      res.status(500).json({
+        code: 'ITEM_NOT_FOUND', msg: '没有该商品'
+      })
+    }
+
   })
 
   app.get('/items', async (req, res) => {

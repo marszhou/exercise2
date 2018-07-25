@@ -26,5 +26,26 @@ module.exports = {
       id,
       cb
     )
+  },
+  getCategories: id => (db, cb) => {
+    return db.all(
+      `select category_id from category_item_set where item_id=?`,
+      id,
+      cb
+      // function(error, categories) {
+      //   if (error) {
+      //     cb(error)
+      //   } else {
+      //     if (categories.length > 0) {
+      //       require('./category').gets(categories.map(c => c.category_id))(
+      //         db,
+      //         cb
+      //       )
+      //     } else {
+      //       cb(null, [])
+      //     }
+      //   }
+      // }
+    )
   }
 }

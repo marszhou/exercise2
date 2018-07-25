@@ -2,7 +2,7 @@ GET http://localhost:8080/ HTTP/1.1
 
 ### 获取指定商品
 
-GET http://localhost:8080/items/1 HTTP/1.1
+GET http://localhost:8080/items/71 HTTP/1.1
 
 ### 商品列表（按category/brand过滤）
 
