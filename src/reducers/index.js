@@ -2,7 +2,7 @@ import _ from 'lodash'
 import login, * as fromLogin from './login'
 import register, * as fromRegister from './register'
 import message from './message'
-import blog from './blog'
+import blog, * as fromBlog from './blog'
 import { combineReducers } from 'redux'
 
 const root = combineReducers({
@@ -11,20 +11,15 @@ const root = combineReducers({
 
 export default root
 
-export const loginSelectors = _.keys(fromLogin).reduce(
+const groupSelector = (namespace, statePath) => _.keys(namespace).reduce(
   (ret, name) => ({
     ...ret,
-    [name]: state => fromLogin[name](state.login)
+    [name]: state => namespace[name](_.get(state, statePath))
   }),
   {}
 )
 
-export const registerSelectors = _.keys(fromRegister).reduce(
-  (ret, name) => ({
-    ...ret,
-    [name]: state => fromRegister[name](state.register)
-  }),
-  {}
-)
-
+export const loginSelectors = groupSelector(fromLogin, 'login')
+export const registerSelectors = groupSelector(fromRegister, 'register')
 export const getMessage = state => state.message
+export const blogSelectors = groupSelector(fromBlog, 'blog')

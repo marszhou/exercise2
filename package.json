@@ -43,7 +43,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "init-db": "rm ./data/d1.db; sqlite3 ./data/database.db < ./data/dump.sql",
+    "init-db": "rm ./data/database.db; sqlite3 ./data/database.db < ./data/dump.sql",
     "build-server": "babel server --out-dir server-build",
     "server": "node server-build/index.js",
     "server-dev": "node-dev server/index.js "

@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { calcuatePagination } from '../utils/pagination';
 
 const isFormRequest = (state = false, action) => {
   switch (action.type) {
@@ -24,7 +25,7 @@ const getUserIdFromAction = action => {
   }
 }
 
-const count = (listActionName) =>  (state = 0, action) => {
+const count = listActionName => (state = 0, action) => {
   switch (action.type) {
     case listActionName:
       return action.count
@@ -51,7 +52,7 @@ const countByUser = (state = {}, action) => {
   return state
 }
 
-const offset = (listActionName) => (state = {}, action) => {
+const offset = listActionName => (state = {}, action) => {
   switch (action.type) {
     case listActionName:
       const { offset, list } = action
@@ -88,7 +89,6 @@ const offsetByUser = (state = {}, action) => {
   return state
 }
 
-
 const byId = (state = {}, action) => {
   if (action.type === 'BLOG.LIST_BY_USER') {
     const nextState = {
@@ -111,3 +111,42 @@ export default combineReducers({
   count: count('BLOG.LIST'),
   offset: offset('BLOG.LIST')
 })
+
+const pageSize = 10
+export const getPageByUser = (state, userId, page) => {
+  const offset = state.offsetByUser[userId]
+  const start = (page - 1) * pageSize
+  return [...Array(pageSize)]
+    .reduce(
+      ((ret, v, index) => {
+        const pos = start + index
+        ret.push(offset[pos])
+        return ret
+      },
+      [])
+    )
+    .map(blogId => (blogId ? state.byId[blogId] : null))
+}
+export const getPage = (state, page) => {
+  const offset = state.offset
+  const start = (page - 1) * pageSize
+  return [...Array(pageSize)]
+    .reduce(
+      ((ret, v, index) => {
+        const pos = start + index
+        ret.push(offset[pos])
+        return ret
+      },
+      [])
+    )
+    .map(blogId => (blogId ? state.byId[blogId] : null))
+}
+
+export const getPaginationByUser = (state, userId, currentPage) => {
+  const count = state.countByUser[userId] || 0
+  return calcuatePagination(currentPage, pageSize, count)
+}
+export const getPagination = (state, userId, currentPage) => {
+  const count = state.count
+  return calcuatePagination(currentPage, pageSize, count)
+}
