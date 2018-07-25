@@ -9,13 +9,16 @@ export const create = ({ title, content }) => dispatch => {
   dispatch({
     type: 'BLOG.FORM_REQUEST'
   })
-  return api.blog.create({ title, content }).then(({ data }) => {
-    dispatch({
-      type: 'BLOG.CREATE_SUCCESS',
-      blog: data
+  return api.blog
+    .create({ title, content })
+    .then(({ data: { blogs, users } }) => {
+      dispatch({
+        type: 'BLOG.CREATE_SUCCESS',
+        blogs,
+        users
+      })
+      dispatch(triggerMessage('日志创建成功'))
     })
-    dispatch(triggerMessage('日志创建成功'))
-  })
 }
 
 export const update = (id, { title, content }) => dispatch => {
@@ -26,29 +29,34 @@ export const update = (id, { title, content }) => dispatch => {
   dispatch({
     type: 'BLOG.UPDATE_REQUEST'
   })
-  return api.blog.update(id, { title, content }).then(({ data }) => {
-    dispatch({
-      type: 'BLOG.FORM_SUCCESS',
-      blog: data
+  return api.blog
+    .update(id, { title, content })
+    .then(({ data: { blogs, users } }) => {
+      dispatch({
+        type: 'BLOG.FORM_SUCCESS',
+        blogs,
+        users
+      })
+      dispatch(triggerMessage('日志修改成功'))
     })
-    dispatch(triggerMessage('日志修改成功'))
-  })
 }
 
-export const remove = id => (dispatch) => {
-  return api.blog.remove(id).then(({data}) => {
+export const remove = id => dispatch => {
+  return api.blog.remove(id).then(({ data: { blogs, users } }) => {
     dispatch({
       type: 'BLOG.REMOVED',
-      blog: data
+      blogs,
+      users
     })
   })
 }
 
 export const get = id => dispatch => {
-  return api.blog.get(id).then(({ data }) => {
+  return api.blog.get(id).then(({ data: { blogs, users } }) => {
     dispatch({
       type: 'BLOG.GET',
-      blog: data
+      blogs,
+      users
     })
   })
 }
@@ -56,27 +64,41 @@ export const get = id => dispatch => {
 export const listByUser = (userId, offset) => dispatch => {
   const count = api.blog.countByUser(userId)
   const list = api.blog.listByUser(userId, offset)
-  return Promise.all([count, list]).then(([{ data:count }, { data:list }]) => {
-    dispatch({
-      type: 'BLOG.LIST_BY_USER',
-      userId,
-      count: count.rc,
-      offset,
-      list
-    })
-  })
+  return Promise.all([count, list]).then(
+    ([
+      { data: count },
+      {
+        data: { blogs, users }
+      }
+    ]) => {
+      dispatch({
+        type: 'BLOG.LIST_BY_USER',
+        userId,
+        count: count.rc,
+        offset,
+        blogs,
+        users
+      })
+    }
+  )
 }
 
 export const list = offset => dispatch => {
   const count = api.blog.count()
   const list = api.blog.list(offset)
   return Promise.all([count, list]).then(
-    ([{ data: count }, { data: list }]) => {
+    ([
+      { data: count },
+      {
+        data: { blogs, users }
+      }
+    ]) => {
       dispatch({
         type: 'BLOG.LIST',
         count: count.rc,
         offset,
-        list
+        blogs,
+        users
       })
     }
   )
