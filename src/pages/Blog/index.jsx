@@ -6,6 +6,7 @@ import BlogList from './List'
 import BlogView from './View'
 
 import styles from '../../styles.module.css'
+import BlogListByAuthor from './ListByAuthor';
 
 const index = ({ match }) => {
   const linkClassProps = {
@@ -29,6 +30,7 @@ const index = ({ match }) => {
         <Route path={`${match.path}/create`} component={BlogCreate} />
         <Route path={`${match.path}/edit/:blogId(\\d+)`} component={BlogEdit} />
         <Route path={`${match.path}/:blogId(\\d+)`} component={BlogView} />
+        <Route path={`${match.path}/author/:userId`} component={BlogListByAuthor} exact />
         <Route path={`${match.path}/`} component={BlogList} exact />
       </Switch>
     </div>

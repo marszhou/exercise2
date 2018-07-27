@@ -118,18 +118,19 @@ export const getBlog = (state, id) => state.byId[id]
 
 const pageSize = 10
 export const getPageByUser = (state, userId, page) => {
-  const offset = state.offsetByUser[userId]
+  const offset = state.offsetByUser[userId] || {}
   const start = (page - 1) * pageSize
   return [...Array(pageSize)]
     .reduce(
-      ((ret, v, index) => {
+      (ret, v, index) => {
         const pos = start + index
         ret.push(offset[pos])
         return ret
       },
-      [])
+      []
     )
     .map(blogId => (blogId ? state.byId[blogId] : null))
+    .filter(blog => !!blog)
 }
 export const getPage = (state, page) => {
   const offset = state.offset
