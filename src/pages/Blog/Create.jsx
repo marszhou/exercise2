@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BlogForm from '../../components/BlogForm'
 import {connect} from 'react-redux'
 import actions from '../../actions';
-import { blogSelectors } from '../../reducers';
+import { blogsSelectors } from '../../reducers';
 class BlogCreate extends Component {
   value = {}
 
@@ -28,7 +28,7 @@ class BlogCreate extends Component {
 }
 
 BlogCreate = connect(state => ({
-  isRequest: blogSelectors.getIsFormRequest(state)
+  isRequest: blogsSelectors.getIsFormRequest(state)
 }), actions.blog)(BlogCreate)
 
 export default BlogCreate

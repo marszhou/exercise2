@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { calcuatePagination } from '../utils/pagination';
+import _ from 'lodash'
+import { calcuatePagination } from '../utils/pagination'
 
 const isFormRequest = (state = false, action) => {
   switch (action.type) {
@@ -10,18 +11,6 @@ const isFormRequest = (state = false, action) => {
       return false
     default:
       return state
-  }
-}
-
-const getUserIdFromAction = action => {
-  switch (action.type) {
-    case 'BLOG.LIST_BY_USER':
-      return action.userId
-    case 'BLOG.CREATE_SUCCESS':
-    case 'BLOG.REMOVED':
-      return action.users[0].id
-    default:
-      return
   }
 }
 
@@ -40,7 +29,7 @@ const count = listActionName => (state = 0, action) => {
 }
 
 const countByUser = (state = {}, action) => {
-  const userId = getUserIdFromAction(action)
+  const {userId} = action
 
   if (userId) {
     return {
@@ -53,32 +42,33 @@ const countByUser = (state = {}, action) => {
 }
 
 const offset = listActionName => (state = {}, action) => {
-  const { offset, blogs } = action
+  const { offset } = action
 
   switch (action.type) {
     case listActionName:
-      const nextState = {
-        ...state,
-        ...blogs.reduce((ret, blog, index) => {
-          ret[offset + index] = blog.id
+      return action.response.result.blogs.reduce(
+        (ret, blogId, index) => {
+          ret[offset + index] = blogId
           return ret
-        }, {})
-      }
-      return nextState
+        },
+        { ...state }
+      )
+
     case 'BLOG.REMOVED':
       return Object.keys(state).reduce((ret, offset) => {
-        if (ret[offset] !== blogs[0].id) {
+        if (ret[offset] !== action.response.result.blog.id) {
           return { [offset]: state[offset] }
         }
         return ret
       }, {})
+
     default:
       return state
   }
 }
 
 const offsetByUser = (state = {}, action) => {
-  const userId = getUserIdFromAction(action)
+  const {userId} = action
   if (userId) {
     const nextState = {
       ...state,
@@ -90,13 +80,12 @@ const offsetByUser = (state = {}, action) => {
 }
 
 const byId = (state = {}, action) => {
-  if (action.blogs) {
+  const { blogs } = _.get(action, 'response.entities', {})
+
+  if (blogs) {
     const nextState = {
       ...state,
-      ...action.blogs.reduce((ret, blog) => {
-        ret[blog.id] = blog
-        return ret
-      }, {})
+      ...blogs
     }
     return nextState
   }

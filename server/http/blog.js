@@ -13,7 +13,7 @@ const outputBlogs = async (db, res, offset, queryFunc) => {
   res.json({
     blogs: blogs.map(blog => {
       const user = users.find(user => blog.user_id === user.id)
-      return { blog: { ..._.omit(blog, 'user_id'), user: formatUser(user) } }
+      return { ..._.omit(blog, 'user_id'), user: formatUser(user) }
     })
   })
 }

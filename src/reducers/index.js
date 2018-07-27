@@ -2,14 +2,17 @@ import _ from 'lodash'
 import login, * as fromLogin from './login'
 import register, * as fromRegister from './register'
 import message from './message'
-import blog, * as fromBlog from './blog'
+import blogs, * as fromBlogs from './blogs'
+import users, * as fromUsers from './users'
+
 import { combineReducers } from 'redux'
 
 const root = combineReducers({
   login,
   register,
   message,
-  blog
+  blogs,
+  users
 })
 
 export default root
@@ -26,4 +29,5 @@ const makeGroupSelectors = (namespace, statePath) =>
 export const loginSelectors = makeGroupSelectors(fromLogin, 'login')
 export const registerSelectors = makeGroupSelectors(fromRegister, 'register')
 export const getMessage = state => state.message
-export const blogSelectors = makeGroupSelectors(fromBlog, 'blog')
+export const blogsSelectors = makeGroupSelectors(fromBlogs, 'blogs')
+export const usersSelectors = makeGroupSelectors(fromUsers, 'users')
