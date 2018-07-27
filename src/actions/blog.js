@@ -5,7 +5,7 @@ import * as blogSchemas from './schema/blog'
 import { loginSelectors } from '../reducers';
 
 export const create = ({ title, content }) => (dispatch, getState) => {
-  if (!(title || content)) {
+  if (!(title && content)) {
     dispatch(triggerMessage('不能保存，有未填写完成的数据。'))
     return Promise.resolve()
   }
