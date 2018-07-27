@@ -43,3 +43,46 @@
 .blogTable tr td:nth-child(2){
   padding-left: 5px;
 }
+
+.blogList {
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.blogList tbody tr:nth-child(odd){
+  background-color: #EFEFEF;
+}
+
+.blogListTitle {
+  width: 500px;
+}
+
+.blogList th {
+  text-align: left;
+  font-weight: bold;
+}
+
+.blogListUser {
+  width: 150px;
+}
+
+.blogListCreateTime {
+  width: 300px;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination a {
+  border: 1px solid #777;
+  text-decoration: none;
+  padding: 4px;
+  margin: 4px;
+  min-width: 24px;
+  display: inline-block;
+}
+
+.pagination a.current {
+  border: 1px solid red;
+}

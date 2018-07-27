@@ -21,7 +21,7 @@ const makeGroupSelectors = (namespace, statePath) =>
   _.keys(namespace).reduce(
     (ret, name) => ({
       ...ret,
-      [name]: state => namespace[name](_.get(state, statePath))
+      [name]: (state, ...args) => namespace[name](_.get(state, statePath), ...args)
     }),
     {}
   )

@@ -30,11 +30,10 @@ const makeSeq = (current, length, total) => {
 }
 
 export const calcuatePagination = (currentPage, pageSize, itemCount, seqLen=5) => {
-  if (itemCount === 0) return null
+  if (itemCount === 0) return {}
 
   const pageCount = Math.ceil(itemCount / pageSize)
-  if (pageCount === 0) return null
-  const pagination = {}
+  const pagination = {current: currentPage}
   if (currentPage > 1) pagination.previous = currentPage - 1
   if (currentPage < pageCount) pagination.next = currentPage + 1
 
@@ -49,4 +48,4 @@ export const calcuatePagination = (currentPage, pageSize, itemCount, seqLen=5) =
   return pagination
 }
 
-// console.log(calcuatePagination(9, 10, 100, 6))
+console.log(calcuatePagination(9, 10, 100, 6))

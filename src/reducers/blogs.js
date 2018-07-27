@@ -14,7 +14,7 @@ const isFormRequest = (state = false, action) => {
   }
 }
 
-const isListRequest (state = false, action) => {
+const isListRequest = (state = false, action) => {
   switch(action.type) {
     case 'BLOG.LIST_REQUEST':
       return true
@@ -134,23 +134,25 @@ export const getPage = (state, page) => {
   const start = (page - 1) * pageSize
   return [...Array(pageSize)]
     .reduce(
-      ((ret, v, index) => {
+      (ret, v, index) => {
         const pos = start + index
         ret.push(offset[pos])
         return ret
       },
-      [])
+      []
     )
     .map(blogId => (blogId ? state.byId[blogId] : null))
+    .filter(blog => !!blog)
 }
 
 export const getPaginationByUser = (state, userId, currentPage) => {
   const count = state.countByUser[userId] || 0
   return calcuatePagination(currentPage, pageSize, count)
 }
-export const getPagination = (state, userId, currentPage) => {
+export const getPagination = (state, currentPage) => {
   const count = state.count
-  return calcuatePagination(currentPage, pageSize, count)
+  return calcuatePagination(currentPage, pageSize, count, 2)
 }
 
 export const getIsFormRequest = state => state.isFormRequest
+export const getIsListRequest = state => state.isListRequest
