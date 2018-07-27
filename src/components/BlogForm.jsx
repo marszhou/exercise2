@@ -23,6 +23,7 @@ class BlogForm extends React.Component {
   }
 
   value() {
+    console.log(this.title)
     return {
       title: this.title.value.trim(),
       content: this.editor.getContent('html')
@@ -30,7 +31,9 @@ class BlogForm extends React.Component {
   }
 
   handleChange = () => {
-    this.props.onChange(this.value())
+    if (this.title) {
+      this.props.onChange(this.value())
+    }
   }
 
   render() {
