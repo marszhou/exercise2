@@ -13,7 +13,7 @@ class BlogView extends Component {
     this.props.get(id)
   }
   render() {
-    const { blog, history, canDelete, remove } = this.props
+    const { blog, history, isOwner, remove } = this.props
     return (
       <div>
         {blog ? (
@@ -35,7 +35,14 @@ class BlogView extends Component {
               返回
             </button>
           ) : null}
-          {canDelete ? (
+          {isOwner ? (
+            <button
+              onClick={() => history.push('/blogs/edit/'+blog.id)}
+            >
+              编辑
+            </button>
+          ) : null}
+          {isOwner ? (
             <button
               onClick={() => remove(blog.id).then(() => history.goBack())}
             >
@@ -57,7 +64,7 @@ BlogView = connect(
     }
     return {
       blog,
-      canDelete: blog
+      isOwner: blog
         ? loginSelectors.getUser(state).id === blog.user.id
         : false
     }

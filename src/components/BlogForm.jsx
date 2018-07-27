@@ -6,14 +6,15 @@ import styles from '../styles.module.css'
 
 class BlogForm extends React.Component {
   static props = {
-    title: PropTypes.string,
-    content: PropTypes.string,
+    value: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+    }),
     onChange: PropTypes.func
   }
 
   static defaultProps = {
-    title: '',
-    content: '',
+    value: {},
     onChange: () => {}
   }
 
@@ -23,7 +24,6 @@ class BlogForm extends React.Component {
   }
 
   value() {
-    console.log(this.title)
     return {
       title: this.title.value.trim(),
       content: this.editor.getContent('html')
@@ -37,7 +37,7 @@ class BlogForm extends React.Component {
   }
 
   render() {
-    const { title, content } = this.props
+    const { title, content } = this.props.value
     const editorProps = {
       height: 200,
       controls: ['bold', 'italic', 'underline', 'strike-through'],
