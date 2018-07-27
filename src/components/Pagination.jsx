@@ -19,7 +19,11 @@ const Pagination = ({
       {ellipsisLeft}
       {seq &&
         seq.map(page => (
-          <Link to={'?page=' + page} key={page} className={current === page ? styles.current:''}>
+          <Link
+            to={'?page=' + page}
+            key={page}
+            className={current === page ? styles.current : ''}
+          >
             {page}
           </Link>
         ))}
