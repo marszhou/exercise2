@@ -5,6 +5,7 @@ import * as queryString from 'query-string'
 import { blogsSelectors, usersSelectors } from '../../reducers'
 import BlogItemList from '../../components/BlogItemList'
 import Pagination from '../../components/Pagination'
+import Loading from '../../components/Loading'
 
 class BlogList extends Component {
   componentWillMount() {
@@ -29,11 +30,10 @@ class BlogList extends Component {
   render() {
     const { blogs, pagination, isRequest } = this.props
 
-    console.log(pagination)
     return (
       <div>
         {isRequest && blogs.length === 0
-          ? 'loading'
+          ? <Loading />
           : [
               <BlogItemList key="list" items={blogs} />,
               <Pagination key="pagination" {...pagination} />

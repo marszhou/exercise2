@@ -114,6 +114,8 @@ export default combineReducers({
   offset: offset('BLOG.LIST')
 })
 
+export const getBlog = (state, id) => state.byId[id]
+
 const pageSize = 10
 export const getPageByUser = (state, userId, page) => {
   const offset = state.offsetByUser[userId]

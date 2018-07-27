@@ -44,6 +44,12 @@
   padding-left: 5px;
 }
 
+.blogListEmpty {
+  text-align: center;
+  color: #999;
+  margin: 20px;
+}
+
 .blogList {
   margin: 10px auto;
   border-collapse: collapse;
@@ -85,4 +91,36 @@
 
 .pagination a.current {
   border: 1px solid red;
+}
+
+.loading {
+  background-image: url('./assets/images/Spinner-1s-200px.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.blogView {
+  width: 600px;
+  margin: 10px auto;
+  border: 1px dashed #EEE;
+  padding: 12px;
+}
+
+.blogView > h1 {
+  text-align: center;
+}
+
+.blogView > p {
+  text-align: center;
+  font-size: 12px;
+}
+
+.blogView > div {
+
+}
+
+.blogView img {
+  max-width: 95%!important;
 }

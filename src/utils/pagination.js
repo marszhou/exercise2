@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 const makeSeq = (current, length, total) => {
   if (length >= total) return [...Array(total)].map((v, i) => i + 1)
-  const ret = [current]
+  const ret = [current > total ? total : current]
   let canBackward = true
   let canForward = true
   const backward = seq => {
@@ -29,11 +29,16 @@ const makeSeq = (current, length, total) => {
   return ret
 }
 
-export const calcuatePagination = (currentPage, pageSize, itemCount, seqLen=5) => {
+export const calcuatePagination = (
+  currentPage,
+  pageSize,
+  itemCount,
+  seqLen = 5
+) => {
   if (itemCount === 0) return {}
 
   const pageCount = Math.ceil(itemCount / pageSize)
-  const pagination = {current: currentPage}
+  const pagination = { current: currentPage }
   if (currentPage > 1) pagination.previous = currentPage - 1
   if (currentPage < pageCount) pagination.next = currentPage + 1
 
