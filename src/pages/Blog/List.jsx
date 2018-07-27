@@ -28,6 +28,8 @@ class BlogList extends Component {
 
   render() {
     const { blogs, pagination, isRequest } = this.props
+
+    console.log(pagination)
     return (
       <div>
         {isRequest && blogs.length === 0
