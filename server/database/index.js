@@ -1,5 +1,5 @@
 const getDatabase = require('./getDatabase')
-const dbWrapper = require('./dbWrapper')(getDatabase)
+const dbWrapper = require('./dbWrapper')(getDatabase())
 
 module.exports = {
   user: dbWrapper(require('./user')),

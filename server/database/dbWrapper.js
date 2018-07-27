@@ -1,10 +1,10 @@
 const _ = require('lodash')
 
-const dbWrapper = getDb => methods => {
+const dbWrapper = db => methods => {
   return _.keys(methods).reduce((ret, methodName) => {
     ret[methodName] = (...args) =>
       new Promise((resolve, reject) => {
-        const db = getDb()
+        // const db = getDb()
         methods[methodName](...args)(db, function(error, result) {
           if (error) {
             reject(error)
@@ -16,7 +16,7 @@ const dbWrapper = getDb => methods => {
             }
           }
         })
-        db.close()
+        // db.close()
       })
     return ret
   }, {})

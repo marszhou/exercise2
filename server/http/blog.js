@@ -36,20 +36,20 @@ module.exports = (app, db) => {
   }
 
   app.get('/blogs/:blogId(\\d+)', async (req, res) => {
-    outputBlog(db, res, req.params.blogId)
+    await outputBlog(db, res, req.params.blogId)
   })
 
   app.post('/blogs', requireLogin(db), async (req, res) => {
     const { title, content } = req.body
     const userId = req.login.id
     const ret = await db.blog.create(userId, title, content)
-    outputBlog(db, res, ret.lastID)
+    await outputBlog(db, res, ret.lastID)
   })
 
   app.get('/blogs/user/:userId(\\d+)', async (req, res) => {
     const userId = req.params.userId
     const offset = req.query.offset || 0
-    outputBlogs(db, res, offset, _.partial(db.blog.listByUser, userId))
+    await outputBlogs(db, res, offset, _.partial(db.blog.listByUser, userId))
   })
 
   app.get('/blogs/user/:userId(\\d+)/count', async (req, res) => {
@@ -60,7 +60,7 @@ module.exports = (app, db) => {
 
   app.get('/blogs', async (req, res) => {
     const offset = req.query.offset || 0
-    outputBlogs(db, res, offset, db.blog.list)
+    await   outputBlogs(db, res, offset, db.blog.list)
   })
 
   app.get('/blogs/count', async (req, res) => {
@@ -76,7 +76,7 @@ module.exports = (app, db) => {
       const blogId = req.params.blogId
       const { title, content } = req.body
       const ret = await db.blog.update(blogId, { title, content })
-      outputBlog(db, res, blogId)
+      await outputBlog(db, res, blogId)
     }
   )
 
@@ -86,7 +86,7 @@ module.exports = (app, db) => {
     validBlogRequest,
     async (req, res) => {
       const blogId = req.params.blogId
-      outputBlog(db, res, blogId)
+      await outputBlog(db, res, blogId)
       await db.blog.delete(blogId)
     }
   )
