@@ -14,8 +14,9 @@ const Pagination = ({
 }) => {
   return (
     <div className={styles.pagination}>
-      {first && <Link to={'?page=' + first}>&lt;&lt;</Link>}
       {previous && <Link to={'?page=' + previous}>&lt;</Link>}
+      {first && <Link to={'?page=' + first}>{first}</Link>}
+
       {ellipsisLeft && '...'}
       {seq &&
         seq.map(page => (
@@ -28,8 +29,8 @@ const Pagination = ({
           </Link>
         ))}
       {ellipsisRight && '...'}
+      {last && <Link to={'?page=' + last}>{last}</Link>}
       {next && <Link to={'?page=' + next}>&gt;</Link>}
-      {last && <Link to={'?page=' + last}>&gt;&gt;</Link>}
     </div>
   )
 }
