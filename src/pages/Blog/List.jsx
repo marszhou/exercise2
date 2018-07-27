@@ -9,7 +9,6 @@ class BlogList extends Component {
     const {page = 1} = query
 
     this.props.list((page-1) * 10)
-    // console.log(queryString.parse(this.props.location.search))
   }
 
   render() {

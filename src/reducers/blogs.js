@@ -14,6 +14,18 @@ const isFormRequest = (state = false, action) => {
   }
 }
 
+const isListRequest (state = false, action) => {
+  switch(action.type) {
+    case 'BLOG.LIST_REQUEST':
+      return true
+    case 'BLOG.LIST_BY_USER':
+    case 'BLOG.LIST':
+      return false
+    default:
+      return state
+  }
+}
+
 const count = listActionName => (state = 0, action) => {
   switch (action.type) {
     case listActionName:
@@ -94,6 +106,7 @@ const byId = (state = {}, action) => {
 
 export default combineReducers({
   isFormRequest,
+  isListRequest,
   countByUser,
   offsetByUser,
   byId,
