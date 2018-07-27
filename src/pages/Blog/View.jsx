@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../../actions'
-import { blogsSelectors, usersSelectors } from '../../reducers'
+import { blogsSelectors, usersSelectors, loginSelectors } from '../../reducers'
 import * as queryString from 'query-string'
 import Loading from '../../components/Loading'
 import moment from 'moment'
@@ -13,7 +13,7 @@ class BlogView extends Component {
     this.props.get(id)
   }
   render() {
-    const { blog, history } = this.props
+    const { blog, history, canDelete, remove } = this.props
     return (
       <div>
         {blog ? (
@@ -35,6 +35,13 @@ class BlogView extends Component {
               返回
             </button>
           ) : null}
+          {canDelete ? (
+            <button
+              onClick={() => remove(blog.id).then(() => history.goBack())}
+            >
+              删除
+            </button>
+          ) : null}
         </p>
       </div>
     )
@@ -49,7 +56,10 @@ BlogView = connect(
       blog = { ...blog, user: usersSelectors.getUser(state, blog.user) }
     }
     return {
-      blog
+      blog,
+      canDelete: blog
+        ? loginSelectors.getUser(state).id === blog.user.id
+        : false
     }
   },
   actions.blog

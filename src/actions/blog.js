@@ -41,9 +41,10 @@ export const update = (id, { title, content }) => dispatch => {
 
 export const remove = id => dispatch => {
   return api.blog.remove(id).then(({ data }) => {
+    dispatch(triggerMessage('删除成功'))
     dispatch({
       type: 'BLOG.REMOVED',
-      resoponse: normalize(data, { blog: blogSchemas.blogEntity })
+      response: normalize(data, { blog: blogSchemas.blogEntity })
     })
   })
 }
