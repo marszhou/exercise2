@@ -5,12 +5,17 @@ const formatUser = user => _.omit(user, 'password', 'salt')
 const outputBlog = async (db, res, blogId) => {
   const blog = await db.blog.get(blogId)
   const user = await db.user.get(blog.user_id)
-  res.json({ blogs: [blog], users: [formatUser(user)] })
+  res.json({ blog: { ..._.omit(blog, 'user_id'), user: formatUser(user) } })
 }
 const outputBlogs = async (db, res, offset, queryFunc) => {
   const blogs = await queryFunc(offset, 10)
   const users = await db.user.in(_.uniq(blogs.map(b => b.user_id)))
-  res.json({ blogs, users: users.map(formatUser) })
+  res.json({
+    blogs: blogs.map(blog => {
+      const user = users.find(user => blog.user_id === user.id)
+      return { blog: { ..._.omit(blog, 'user_id'), user: formatUser(user) } }
+    })
+  })
 }
 
 module.exports = (app, db) => {

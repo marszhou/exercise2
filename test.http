@@ -60,7 +60,7 @@ content-type: application/json
 
 ###  按位置(offset)获取指定用户blog列表
 
-GET http://localhost:8080/blogs/user/1?offset=0 HTTP/1.1
+GET http://localhost:8080/blogs/user/9?offset=0 HTTP/1.1
 content-type: application/json
 
 ### 获取某用户blog数量
