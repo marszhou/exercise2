@@ -68,7 +68,7 @@ const offset = listActionName => (state = {}, action) => {
 
     case 'BLOG.REMOVED':
       return Object.keys(state).reduce((ret, offset) => {
-        if (ret[offset] !== action.response.result.blog) {
+        if (state[offset] !== action.response.result.blog) {
           return { [offset]: state[offset] }
         }
         return ret
