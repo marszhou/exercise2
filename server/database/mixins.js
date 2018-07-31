@@ -41,8 +41,8 @@ module.exports = TABLE => ({
   listByUser: (userId, offset, length) => (db, cb) => {
     return db.all(
       `select * from ${TABLE} \
-      where user_id=? \
-      limit ${offset}, ${length}`,
+      where user_id=? ` +
+        (offset !== undefined ? `limit ${offset}, ${length}` : ''),
       userId,
       cb
     )

@@ -1,13 +1,5 @@
 GET http://localhost:8080/ HTTP/1.1
 
-### 获取指定商品
-
-GET http://localhost:8080/items/71 HTTP/1.1
-
-### 商品列表（按category/brand过滤）
-
-GET http://localhost:8080/items?category=1&brand=1 HTTP/1.1
-
 ### 注册
 
 POST http://localhost:8080/account/register HTTP/1.1
@@ -85,6 +77,14 @@ DELETE http://localhost:8080/blogs/43 HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 
+### 获取指定商品
+
+GET http://localhost:8080/items/2 HTTP/1.1
+
+### 商品列表（按category/brand过滤）
+
+GET http://localhost:8080/items?category=1 HTTP/1.1
+
 ### 获取所有品牌
 GET http://localhost:8080/brands HTTP/1.1
 content-type: application/json
@@ -112,7 +112,7 @@ content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 
 {
-  "itemId":1, "number": 2
+  "itemId":2, "number": 1
 }
 
 ### 设置购物车
@@ -125,6 +125,6 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
 }
 
 ### 清空购物车
-DELETE http://localhost:8080/cart HTTP/1.1
+POST http://localhost:8080/cart/clear HTTP/1.1
 content-type: application/json
 Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
