@@ -36,7 +36,7 @@ module.exports = (app, db) => {
     res.json(await db.cartItem.get(citemId))
   })
 
-  app.delete('/cart', requireLogin(db), async (req, res) => {
+  app.post('/cart/clear', requireLogin(db), async (req, res) => {
     res.json(await db.cartItem.clear(req.login.id))
   })
 }

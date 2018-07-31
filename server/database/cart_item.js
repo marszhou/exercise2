@@ -1,9 +1,10 @@
 const _ = require('lodash')
-const updateBind = require('./updateBind')
 
 const TABLE = 'cart_items'
 
 module.exports = {
+  ...require('./mixins')(TABLE),
+
   create: (userId, itemId, number) => (db, cb) => {
     return db
       .prepare(
@@ -20,26 +21,11 @@ module.exports = {
       .finalize()
   },
 
-  delete: id => (db, cb) => {
-    return db
-      .prepare(`delete from ${TABLE} where id=?`)
-      .run(id, cb)
-      .finalize()
-  },
-
   clear: userId => (db, cb) => {
     return db
       .prepare(`delete from ${TABLE} where user_id=?`)
       .run(userId, cb)
       .finalize()
-  },
-
-  listByUser: userId => (db, cb) => {
-    return db.all(`select * from ${TABLE} where user_id=?`, userId, cb)
-  },
-
-  get: id => (db, cb) => {
-    return db.get(`select * from ${TABLE} where id=?`, id, cb)
   },
 
   getItemByUser: (userId, itemId) => (db, cb) => {

@@ -1,9 +1,10 @@
 const _ = require('lodash')
-const common = require('./common')
 
 const TABLE = 'users'
 
 module.exports = {
+  ...require('./mixins')(TABLE),
+
   getByUsername: username => (db, cb) => {
     db.get(`select * from ${TABLE} where username=?`, username, cb)
   },
@@ -15,6 +16,5 @@ module.exports = {
     )
       .run(username, password, salt, gender, Date.now(), cb)
       .finalize()
-  },
-  ...common(TABLE)
+  }
 }

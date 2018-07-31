@@ -4,6 +4,7 @@ const _ = require('lodash')
 const TABLE = 'items'
 
 module.exports = {
+  ...require('./mixins')(TABLE),
   list: conditions => (db, cb) => {
     let sql = ''
     if ('category_id' in conditions) {
@@ -32,20 +33,6 @@ module.exports = {
       `select category_id from category_item_set where item_id=?`,
       id,
       cb
-      // function(error, categories) {
-      //   if (error) {
-      //     cb(error)
-      //   } else {
-      //     if (categories.length > 0) {
-      //       require('./category').gets(categories.map(c => c.category_id))(
-      //         db,
-      //         cb
-      //       )
-      //     } else {
-      //       cb(null, [])
-      //     }
-      //   }
-      // }
     )
   }
 }

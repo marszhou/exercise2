@@ -3,9 +3,8 @@ const _ = require('lodash')
 const TABLE = 'sessions'
 
 module.exports = {
-  get: id => (db, cb) => {
-    return db.get(`select * from ${TABLE} where id=?`, id, cb)
-  },
+  ...require('./mixins')(TABLE),
+
   create: (id, userId) => (db, cb) => {
     return db
       .prepare(
