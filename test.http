@@ -124,6 +124,12 @@ Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
   "itemId":1, "number": 2
 }
 
+### 删除指定购物车item
+
+DELETE http://localhost:8080/cart/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer 76c62250-8667-11e8-a258-4d497283943c
+
 ### 清空购物车
 POST http://localhost:8080/cart/clear HTTP/1.1
 content-type: application/json

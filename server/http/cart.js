@@ -14,7 +14,7 @@ module.exports = (app, db) => {
     if (cartItem.user_id !== userId) {
       return res.status(500).json({ code: 'HAS_NO_RIGHTS', msg: '权限错误' })
     }
-    request.cartItem = cartItem
+    req.cartItem = cartItem
     next()
   }
 
