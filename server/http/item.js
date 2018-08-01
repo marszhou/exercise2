@@ -4,10 +4,11 @@ module.exports = (app, db) => {
   app.get('/items/:itemId', async (req, res) => {
     const item = await db.item.get(req.params.itemId)
     if (item) {
+      item.brand = await db.brand.get(item.brand_id)
       let categories = await db.item.getCategories(req.params.itemId)
       categories = await db.category.in(categories.map(c => c.category_id))
       item.categories = categories
-      res.json(item)
+      res.json(_.omit(item, 'brand_id'))
     } else {
       res.status(500).json({
         code: 'ITEM_NOT_FOUND',

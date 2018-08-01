@@ -47,6 +47,7 @@ BlogList = connect(
   (state, ownProps) => {
     const query = queryString.parse(ownProps.location.search)
     const { page = 1 } = query
+
     return {
       blogs: blogsSelectors
         .getPage(state, +page)

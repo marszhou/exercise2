@@ -44,7 +44,7 @@ class BlogView extends Component {
           ) : null}
           {isOwner ? (
             <button
-              onClick={() => remove(blog.id).then(() => history.goBack())}
+              onClick={() => window.confirm('是否删除') && remove(blog.id).then(() => history.goBack())}
             >
               删除
             </button>

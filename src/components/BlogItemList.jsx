@@ -4,7 +4,7 @@ import {Link, withRouter } from 'react-router-dom'
 import styles from '../styles.module.css'
 moment.locale('zh-cn')
 
-const BlogItemList = ({ items, location }) => {
+const BlogItemList = ({ items }) => {
 
   return items.length > 0 ? (
     <table className={styles.blogList}>
@@ -29,4 +29,4 @@ const BlogItemList = ({ items, location }) => {
   ) : (<div className={styles.blogListEmpty}>空空如也</div>)
 }
 
-export default withRouter(BlogItemList)
+export default (BlogItemList)
